@@ -6,9 +6,11 @@ const Layout = () => {
     return (
         <div className="w-full min-h-screen">
             <Navbar />
-            <div className="nx-container min-h-screen">
-                <Outlet />
-            </div>
+            <main className="flex-grow">
+                <div className="nx-container py-6 md:py-12">
+                    <Outlet />
+                </div>
+            </main>
             <Footer />
         </div>
     )

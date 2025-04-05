@@ -9,6 +9,23 @@
     }
 
     .nx-container {
-        @apply max-w-6xl mx-auto px-4;
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn {
+        @apply h-10 px-4 py-2 text-sm;
+    }
+
+    .btn-sm {
+        @apply h-9 px-3 rounded-sm text-sm;
+    }
+
+    .btn-outline {
+        @apply border border-secondary-text;
+
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] hover:shadow-md sm:hover:shadow-lg;
     }
 }
