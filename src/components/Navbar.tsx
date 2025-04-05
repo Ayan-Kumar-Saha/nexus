@@ -28,7 +28,6 @@ const Navbar: FunctionComponent = () => {
                     </ul>
                 </nav>
             </div>
-
         </header>
     )
 }
