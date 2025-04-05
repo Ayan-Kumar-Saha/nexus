@@ -1,6 +1,15 @@
 @theme {
-    --font-code: 'Jetbrains Mono', sans-serif;
-    --font-body: 'Nunito Sans', sans-serif;
 
+    --font-mono: 'Jetbrains Mono', monospace;
+    --font-sans: 'Nunito Sans', sans-serif;
 
+    --color-page-background: #ffffff;
+    --color-card-background: #fbfafb;
+    --color-code-background: #f1f5f9;
+
+    --color-primary-text: #0f1628;
+    --color-secondary-text: #95a0af;
+    --color-accent-text: #3d82f6;
+
+    --color-border-default: #e2e8f0;
 }
