@@ -1,11 +1,11 @@
 import { Outlet } from "react-router";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 
 const Layout = () => {
     return (
-        <div className="app">
+        <div className="w-full min-h-screen">
             <Navbar />
-            <div className="container">
+            <div className="nx-container">
                 <Outlet />
             </div>
         </div>

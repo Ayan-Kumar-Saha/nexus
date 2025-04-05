@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './App.css'
-import Layout from './components/Layout'
-import Home from './components/Home'
-import AboutMe from './components/AboutMe'
-import Projects from './components/Projects'
-import Blogs from './components/Blogs'
-import Contact from './components/Contact'
+import Layout from './Layout'
+import Home from './pages/Home'
+import AboutMe from './pages/AboutMe'
+import Projects from './pages/Projects'
+import Blogs from './pages/Blogs'
+import Contact from './pages/Contact'
 
 
 const appRouter = createBrowserRouter([

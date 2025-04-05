@@ -1,2 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
+@import "./theme.css";
+
+@layer base {
+
+    *,
+    ::before,
+    ::after {
+        @apply box-border m-0 p-0;
+    }
+
+    html,
+    body {
+        @apply h-full antialiased;
+        font-family: 'Nunito Sans', sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    img,
+    video,
+    canvas,
+    svg {
+        @apply block max-w-full;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        @apply text-inherit;
+    }
+
+    a {
+        @apply no-underline text-inherit;
+    }
+
+    ul[role="list"],
+    ol[role="list"] {
+        @apply list-none;
+    }
+
+    button {
+        @apply bg-transparent border-0 cursor-pointer;
+    }
+
+    table {
+        @apply border-collapse w-full;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline-black outline-offset-2;
+    }
+
+    .nx-container {
+        @apply max-w-6xl mx-auto px-4;
+    }
+}
