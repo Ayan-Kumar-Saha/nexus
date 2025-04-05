@@ -15,19 +15,19 @@ export const PROJECT_LIST: IProject[] = [
     },
     {
         id: 2,
-        name: 'Nexus',
-        description: 'My personal portfolio',
-        tags: ['React', 'Tailwind'],
+        name: 'Anuprerna',
+        description: 'A ecommerce b2b platform',
+        tags: ['Angular', 'Spring Boot', 'PostgreSQL'],
         isCodeAvailable: false,
         codebaseLink: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: false,
-        demoLink: ''
+        demoLink: 'https://anuprerna.com'
     },
     {
         id: 3,
-        name: 'Nexus',
-        description: 'My personal portfolio',
-        tags: ['React', 'Tailwind'],
+        name: 'Bloomsight.js',
+        description: 'A web analytics tool',
+        tags: ['Javascript', 'React', 'Typescript'],
         isCodeAvailable: true,
         codebaseLink: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: true,

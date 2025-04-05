@@ -13,14 +13,14 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
     return (
         <div className="bg-card-background h-full overflow-hidden flex flex-col border border-border-default card-hover rounded-xl">
             <h3 className="flex items-center gap-3 font-mono p-6">
-                <LuCode className="text-lg text-accent-text" /><span className="text-2xl">{name}</span>
+                <LuCode className="text-lg text-accent-text" /><span className="text-xl font-bold">{name}</span>
             </h3>
             <div className="flex-grow p-6 pt-0">
                 <p className="text-secondary-text mb-4">{description}</p>
                 <div className="flex flex-wrap gap-2 mt-2">
                     {
-                        tags.map(tag => (
-                            <div className="py-0.5 px-2.5 text-xs font-semibold bg-code-background">{tag}</div>
+                        tags.map((tag, index) => (
+                            <div key={index} className="py-0.5 px-2.5 text-xs font-semibold bg-code-background">{tag}</div>
                         ))
                     }
                 </div>
