@@ -182,7 +182,11 @@
         @apply font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1;
     }
 
-    .nx-container {
+    .code-block {
+        @apply bg-primary-foreground text-secondary-foreground rounded-md p-3 md:p-4 font-mono text-sm overflow-x-auto;
+    }
+
+    .container-custom {
         @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
     }
 
