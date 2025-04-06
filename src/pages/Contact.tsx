@@ -8,7 +8,7 @@ import { LuSend } from "react-icons/lu";
 
 const Contact = () => {
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting] = useState(false);
 
     return (
         <>
