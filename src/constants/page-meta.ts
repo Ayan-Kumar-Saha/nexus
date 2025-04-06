@@ -1,7 +1,15 @@
 export const HOME_PAGE_META = {
+    what_i_do: {
+        title: "",
+        description: ""
+    },
     featured_project: {
         title: "featured projects",
         description: "Some of my recent work that showcases my skills and experience"
+    },
+    testimonial: {
+        title: "client testimonials",
+        description: "What people are saying about working with me"
     }
 }
 

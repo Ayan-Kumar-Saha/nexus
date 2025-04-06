@@ -26,7 +26,6 @@ const FeaturedProjects = () => {
                     View all projects <ArrowRight size={16} className="ml-1" />
                 </Link>
             </div>
-
         </section>
     )
 }
