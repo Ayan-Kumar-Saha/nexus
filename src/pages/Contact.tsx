@@ -12,7 +12,7 @@ import { CONTACT_PAGE_META } from "@/constants/page-meta";
 
 const Contact = () => {
 
-    const [formData, setFormData] = useState({
+    const [formData] = useState({
         name: '',
         email: '',
         subject: '',
@@ -29,7 +29,7 @@ const Contact = () => {
             <SectionHeader title={CONTACT_PAGE_META.title} description={CONTACT_PAGE_META.description} />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-                {/* Contact Methods */}
+
                 <div className="lg:col-span-1 space-y-6">
                     <h3 className="text-xl font-bold">Get in Touch</h3>
 
@@ -49,7 +49,6 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Contact Form */}
                 <div className="lg:col-span-2">
                     <h3 className="text-xl font-bold mb-6">Send a Message</h3>
                     <form className="space-y-6" onSubmit={onFormSubmit}>
