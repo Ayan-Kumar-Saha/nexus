@@ -3,5 +3,6 @@ export interface ITestimonial {
     author: string;
     profileImage: string;
     designation: string;
+    organization?: string
     quote: string;
 }

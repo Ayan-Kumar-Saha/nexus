@@ -3,6 +3,8 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
+import { CONTACT_METHODS } from "@/constants/contacts";
+import { HOME_PAGE_META } from "@/constants/page-meta";
 import { motion } from "framer-motion";
 import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, Download, ExternalLink, Github } from "lucide-react";
 import { Link } from 'react-router'
@@ -19,13 +21,13 @@ function Developer() {
 }`;
     return (
         <div className="space-y-16 md:space-y-24">
-            {/* Hero Section - Complete Redesign */}
+
             <section className="relative rounded-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-0"></div>
                 <div className="relative z-10 py-8 md:py-16 px-4">
                     <div className="max-w-4xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                            {/* Left Content */}
+
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -79,7 +81,6 @@ function Developer() {
                                 </div>
                             </motion.div>
 
-                            {/* Right Content - Code Snippet */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -103,10 +104,11 @@ function Developer() {
             <section className="relative bg-primary/5 rounded-xl p-8 md:p-12">
                 <div className="max-w-3xl mx-auto text-center space-y-6">
                     <BriefcaseBusiness size={36} className="mx-auto text-primary" />
-                    <h2 className="text-2xl md:text-3xl font-bold">Let's Work Together</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold">
+                        {HOME_PAGE_META.get_in_touch.title}
+                    </h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        I'm currently available for freelance projects or full-time positions.
-                        If you're interested in working together, let's connect!
+                        {HOME_PAGE_META.get_in_touch.description}
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 pt-2">
                         <Button size="lg" asChild>
@@ -116,9 +118,9 @@ function Developer() {
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" asChild>
-                            <a href="mailto:contact@example.com">
+                            <a href={`mailto:${CONTACT_METHODS.find(method => method.name === 'Email')?.value}`}>
                                 <ExternalLink className="mr-2 h-5 w-5" />
-                                contact@example.com
+                                {CONTACT_METHODS.find(method => method.name === 'Email')?.value}
                             </a>
                         </Button>
                     </div>

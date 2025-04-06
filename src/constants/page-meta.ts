@@ -1,7 +1,7 @@
 export const HOME_PAGE_META = {
-    what_i_do: {
-        title: "",
-        description: ""
+    services: {
+        title: "what i do",
+        description: "I specialize in building modern web applications with a focus on performance, accessibility, and user experience"
     },
     featured_project: {
         title: "featured projects",
@@ -10,6 +10,10 @@ export const HOME_PAGE_META = {
     testimonial: {
         title: "client testimonials",
         description: "What people are saying about working with me"
+    },
+    get_in_touch: {
+        title: "let's work together",
+        description: "I'm currently available for freelance projects or full-time positions. If you're interested in working together, let's connect!"
     }
 }
 

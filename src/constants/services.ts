@@ -9,7 +9,7 @@ export const SERVICES: IService[] = [
         description: 'Building responsive and interactive user interfaces with React, TypeScript, and modern CSS.'
     },
     {
-        id: 1,
+        id: 2,
         icon: FileCode,
         title: 'Backend Development',
         description: 'Creating robust APIs and server-side applications using Node.js, Express, and various databases.'
