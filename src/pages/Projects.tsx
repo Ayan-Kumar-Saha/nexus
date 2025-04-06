@@ -8,10 +8,9 @@ import { useState } from "react";
 const Projects = () => {
 
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [allProjects, setAllProjects] = useState<IProject[]>(PROJECT_LIST);
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-    const tags: string[] = Array.from(new Set(allProjects.flatMap(project => project.tags)));
+    const tags: string[] = Array.from(new Set(PROJECT_LIST.flatMap(project => project.tags)));
 
     const onTagClick = (tag: string) => {
         if (selectedTags.includes(tag)) {
@@ -21,7 +20,7 @@ const Projects = () => {
         }
     }
 
-    const filteredProjects = allProjects.filter(project => {
+    const filteredProjects = PROJECT_LIST.filter(project => {
         const matchBySearchTerm = searchTerm === '' || (
             project.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
             project.description.toLowerCase().includes(searchTerm.trim().toLowerCase())
