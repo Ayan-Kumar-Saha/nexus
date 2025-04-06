@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { IProject } from "../interfaces/project";
-import { Code, ExternalLink, Github } from "lucide-react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+import { Card, CardContent } from "./ui/card";
+import { Button } from "./ui/button";
 
 interface IProjectCardProps {
     project: IProject
@@ -10,62 +10,44 @@ interface IProjectCardProps {
 
 const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
 
-    const { image, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
+    const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
 
     return (
-        <Card className="bg-card overflow-hidden card-hover border-border h-full flex flex-col">
-            {image && (
-                <div className="aspect-video overflow-hidden border-b border-border">
-                    <img
-                        src={image}
-                        alt={name}
-                        className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                    />
-                </div>
-            )}
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                    <Code size={18} className="text-primary" />
-                    {name}
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-                <p className="text-muted-foreground mb-4">{description}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
+        <Card className="overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
+            <div className="h-48 bg-muted overflow-hidden">
+                <img src={imagePath} alt={name} className="w-full h-full object-cover" />
+            </div>
+            <CardContent className="p-5">
+                <h3 className="text-lg font-bold mb-2">{name}</h3>
+                <p className="text-muted-foreground text-sm mb-3">{description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
                     {tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-secondary/50">
+                        <span key={tag} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
                             {tag}
-                        </Badge>
+                        </span>
                     ))}
                 </div>
+                <div className="flex items-center gap-3">
+                    {
+                        isCodeAvailable && (
+                            <Button variant="outline" size="sm" asChild>
+                                <a href={codebaseUrl} target="_blank" rel="noopener noreferrer">
+                                    <Github size={16} className="mr-1" /> Code
+                                </a>
+                            </Button>
+                        )
+                    }
+                    {
+                        isDemoAvailable && (
+                            <Button size="sm" asChild>
+                                <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                                    <ExternalLink size={16} className="mr-1" /> Demo
+                                </a>
+                            </Button>
+                        )
+                    }
+                </div>
             </CardContent>
-            <CardFooter className="flex justify-between pt-4 border-t border-border">
-                {
-                    isCodeAvailable && (
-                        <a
-                            href={codebaseUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
-                        >
-                            <Github size={16} />
-                            <span>Code</span>
-                        </a>
-                    )
-                }
-                {
-                    isDemoAvailable && (
-                        <a
-                            href={demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
-                        >
-                            <ExternalLink size={16} />
-                            <span>Demo</span>
-                        </a>
-                    )}
-            </CardFooter>
         </Card>
     );
 }
