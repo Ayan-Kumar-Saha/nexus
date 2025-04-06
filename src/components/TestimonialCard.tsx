@@ -18,7 +18,7 @@ const TestimonialCard: FunctionComponent<ITestimonialCardProps> = ({ testimonial
 
             <div className="flex items-center gap-4 mt-auto">
                 <img
-                    src={profileImage ? profileImage : 'src/assets/images/placeholder.svg'}
+                    src={profileImage ? profileImage : 'images/placeholder.svg'}
                     alt={author}
                     className="w-12 h-12 rounded-full object-cover border border-muted"
                 />
