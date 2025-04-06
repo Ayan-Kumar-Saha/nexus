@@ -1,6 +1,6 @@
 export interface IProject {
     id: number;
-    image?: string
+    imagePath?: string
     name: string;
     description: string;
     tags: string[];
@@ -8,4 +8,5 @@ export interface IProject {
     codebaseUrl: string;
     isDemoAvailable: boolean;
     demoUrl: string;
+    isFeatured: boolean;
 }

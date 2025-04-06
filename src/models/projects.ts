@@ -9,9 +9,11 @@ export const PROJECT_LIST: IProject[] = [
         description: 'My personal portfolio',
         tags: ['React', 'Tailwind'],
         isCodeAvailable: true,
-        codebaseLink: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
+        codebaseUrl: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: true,
-        demoLink: ''
+        demoUrl: '',
+        isFeatured: true,
+        imagePath: 'src/assets/images/placeholder.svg'
     },
     {
         id: 2,
@@ -19,9 +21,11 @@ export const PROJECT_LIST: IProject[] = [
         description: 'A ecommerce b2b platform',
         tags: ['Angular', 'Spring Boot', 'PostgreSQL'],
         isCodeAvailable: false,
-        codebaseLink: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
+        codebaseUrl: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: false,
-        demoLink: 'https://anuprerna.com'
+        demoUrl: 'https://anuprerna.com',
+        isFeatured: true,
+        imagePath: 'src/assets/images/placeholder.svg'
     },
     {
         id: 3,
@@ -29,8 +33,10 @@ export const PROJECT_LIST: IProject[] = [
         description: 'A web analytics tool',
         tags: ['Javascript', 'React', 'Typescript'],
         isCodeAvailable: true,
-        codebaseLink: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
+        codebaseUrl: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: true,
-        demoLink: ''
+        demoUrl: '',
+        isFeatured: true,
+        imagePath: 'src/assets/images/placeholder.svg'
     }
 ]
