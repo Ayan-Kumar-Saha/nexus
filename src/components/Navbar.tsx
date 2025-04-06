@@ -8,24 +8,26 @@ const Navbar: FunctionComponent = () => {
     const location = useLocation();
 
     return (
-        <header className="sticky top-0 backdrop-blur-lg bg-page-background border-b border-border-default z-50">
+        <header className="sticky top-0 backdrop-blur-lg bg-background/90 border-b border-border z-50">
             <div className="nx-container py-3">
-                <nav className="flex justify-between items-center">
-                    <Link to='/' className="font-code text-xl md:text-2xl font-bold hover:text-accent-text transition-colors">
-                        <span className="text-accent-text">&gt;</span> ayan<span className="text-accent-text">_</span>kumar<span className="text-accent-text">_</span>saha
+                <nav className="flex items-center justify-between">
+                    <Link to="/" className="font-mono text-lg md:text-xl font-bold hover:text-primary transition-colors">
+                        <span className="text-primary">&gt;</span> ayan<span className="text-primary">_</span>kumar<span className="text-primary">_</span>saha
                     </Link>
-                    <ul className="flex items-center space-x-6">
-                        {
-                            NAV_LINKS.map((navlink: INavLink) => {
-                                return (
-                                    <li key={navlink.id}>
-                                        <Link to={navlink.path}
-                                            className={`font-medium hover:text-accent-text transition-colors ${navlink.path === location.pathname ? 'text-accent-text' : 'text-primary-text'}`}>{navlink.name}</Link>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
+
+                    <div className="hidden md:flex items-center space-x-6">
+                        <ul className="flex items-center space-x-6">
+                            {NAV_LINKS.map((link: INavLink) => (
+                                <li key={link.name}>
+                                    <Link
+                                        to={link.path}
+                                        className={`hover:text-primary transition-colors relative ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'}`}>
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>
