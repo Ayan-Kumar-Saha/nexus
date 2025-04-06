@@ -1,5 +1,5 @@
 import { ITestimonial } from "@/interfaces/testimonial";
-import { TESTIMONIALS } from "@/models/testimonials";
+import { TESTIMONIALS } from "@/constants/testimonials";
 import TestimonialCard from "./TestimonialCard";
 
 const Testimonials = () => {

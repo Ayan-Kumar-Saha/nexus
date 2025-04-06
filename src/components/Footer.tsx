@@ -1,5 +1,5 @@
 import { ISocialLink } from "../interfaces/social-link";
-import { SOCIAL_LINKS } from "../models/social-links";
+import { SOCIAL_LINKS } from "../constants/social-links";
 
 const Footer = () => {
 
@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <footer className="border-t border-border py-8 bg-background">
-            <div className="nx-container">
+            <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
                         <p className="text-muted-foreground text-sm">

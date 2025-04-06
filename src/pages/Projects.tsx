@@ -1,9 +1,10 @@
 import { LuSearch } from "react-icons/lu";
-import PageHeader from "../components/PageHeader";
-import { pageTitle, pageDescription, PROJECT_LIST } from "../models/projects";
+import SectionHeader from "../components/SectionHeader";
+import { PROJECT_LIST } from "../constants/projects";
 import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { PROJECT_PAGE_META } from "@/constants/page-meta";
 
 const Projects = () => {
 
@@ -31,7 +32,7 @@ const Projects = () => {
 
     return (
         <>
-            <PageHeader title={pageTitle} description={pageDescription} />
+            <SectionHeader title={PROJECT_PAGE_META.title} description={PROJECT_PAGE_META.description} />
             <div className="flex items-center gap-2 p-2 rounded-md border border-border-default mt-6 md:mt-12">
                 <LuSearch className="text-lg text-secondary-text" />
                 <input className="w-full outline-0 text-sm"

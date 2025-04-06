@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from "react";
 import { Link, useLocation } from "react-router";
-import { NAV_LINKS } from "../models/navlinks";
+import { NAV_LINKS } from "../constants/navlinks";
 import { INavLink } from "../interfaces/navlink";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";

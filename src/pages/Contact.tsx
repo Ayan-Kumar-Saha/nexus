@@ -1,13 +1,14 @@
 import { useState } from "react";
 import ContactCard from "../components/ContactCard";
-import PageHeader from "../components/PageHeader";
+import SectionHeader from "../components/SectionHeader";
 import SocialCard from "../components/SocialCard";
-import { CONTACT_METHODS, pageDescription, pageTitle } from "../models/contacts";
-import { SOCIAL_LINKS } from "../models/social-links";
+import { CONTACT_METHODS } from "../constants/contacts";
+import { SOCIAL_LINKS } from "../constants/social-links";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { CONTACT_PAGE_META } from "@/constants/page-meta";
 
 const Contact = () => {
 
@@ -25,7 +26,7 @@ const Contact = () => {
 
     return (
         <div className="space-y-12">
-            <PageHeader title={pageTitle} description={pageDescription} />
+            <SectionHeader title={CONTACT_PAGE_META.title} description={CONTACT_PAGE_META.description} />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
                 {/* Contact Methods */}

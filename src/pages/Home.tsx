@@ -4,7 +4,7 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, Coffee, Download, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, Download, ExternalLink, Github } from "lucide-react";
 import { Link } from 'react-router'
 
 const Home = () => {
@@ -53,8 +53,8 @@ function Developer() {
                                         </Link>
                                     </Button>
                                     <Button variant="outline" asChild>
-                                        <a href="/resume.pdf" download>
-                                            <Download className="mr-2 h-4 w-4" />
+                                        <a href="src/assets/docs/resume_ayan_kumar_saha.pdf" download>
+                                            <CloudDownload className="mr-2 h-4 w-4" />
                                             Download Resume
                                         </a>
                                     </Button>

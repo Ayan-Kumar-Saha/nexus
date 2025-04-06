@@ -1,5 +1,5 @@
 import ServiceCard from "./ServiceCard";
-import { SERVICES } from "@/models/services";
+import { SERVICES } from "@/constants/services";
 import { IService } from "@/interfaces/service";
 
 const Services = () => {

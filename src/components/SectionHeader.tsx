@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 
-type IPageHeaderProps = {
+type ISectionHeaderProps = {
     title: string;
     description: string
 }
 
-const PageHeader: FunctionComponent<IPageHeaderProps> = ({ title, description }) => {
+const SectionHeader: FunctionComponent<ISectionHeaderProps> = ({ title, description }) => {
     return (
         <>
             <h1 className="font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1 mb-6">
@@ -16,4 +16,4 @@ const PageHeader: FunctionComponent<IPageHeaderProps> = ({ title, description })
     )
 }
 
-export default PageHeader;
+export default SectionHeader;

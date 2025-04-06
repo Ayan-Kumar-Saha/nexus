@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { IProject } from "../interfaces/project";
-import { ExternalLink, Github } from "lucide-react";
+import { Code, ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -18,7 +18,10 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>
             <CardContent className="p-5">
-                <h3 className="text-lg font-bold mb-2">{name}</h3>
+                <h3 className="flex items-center gap-2 text-lg font-bold mb-2">
+                    <Code size={20} className="text-primary" />
+                    <span>{name}</span>
+                </h3>
                 <p className="text-muted-foreground text-sm mb-3">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                     {tags.map((tag) => (

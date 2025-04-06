@@ -11,7 +11,7 @@ export const NAV_LINKS: INavLink[] = [
         id: 2,
         name: 'About',
         path: '/about-me',
-        isActive: true
+        isActive: false
     },
     {
         id: 3,
