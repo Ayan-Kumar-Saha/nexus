@@ -183,7 +183,7 @@
     }
 
     .code-block {
-        @apply bg-primary-foreground text-secondary-foreground rounded-md p-3 md:p-4 font-mono text-sm overflow-x-auto;
+        @apply bg-primary-foreground text-secondary-foreground rounded-md font-mono text-sm overflow-x-auto;
     }
 
     .container-custom {

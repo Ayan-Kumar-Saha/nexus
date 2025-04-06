@@ -2,28 +2,18 @@ import CodeSnippet from "@/components/CodeSnippet";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
+import TypewriterBuilder from "@/components/TypewriterBuilder";
 import { Button } from "@/components/ui/button";
 import { CONTACT_METHODS } from "@/constants/contacts";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, Download, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, ExternalLink, Github } from "lucide-react";
 import { Link } from 'react-router'
 
 const Home = () => {
-    const codeExample = `// Hello, I build things for the web
-function Developer() {
-  return {
-    name: "Ayan Kumar Saha",
-    title: "Full Stack Developer",
-    skills: ["React", "Node.js", "TypeScript"],
-    passion: "Creating elegant solutions"
-  };
-}`;
     return (
         <div className="space-y-16 md:space-y-24">
-
             <section className="relative rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-0"></div>
                 <div className="relative z-10 py-8 md:py-16 px-4">
                     <div className="max-w-4xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -35,12 +25,27 @@ function Developer() {
                                 className="space-y-6"
                             >
                                 <div className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
-                                    <span>Available for new projects</span>
+                                    <span>Available for new positions</span>
                                 </div>
 
-                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                                    <span className="block text-foreground">Hi, I'm Ayan Kumar</span>
-                                    <span className="text-primary">Full Stack Developer</span>
+                                <h1 className="text-2xl md:text-3xl lg:text-3xl tracking-tight font-bold">
+                                    <span>I'm <span className="text-primary">Ayan</span></span>
+                                    <TypewriterBuilder
+                                        className="mt-2"
+                                        sequences={[
+                                            { text: "a <span class='text-primary'>Web</span> Developer", pause: 1000 },
+                                            { deleteChars: 13 },
+                                            { text: "<span class='text-primary'>Mobile</span> Developer", pause: 1500 },
+                                            { deleteChars: 16 },
+                                            { text: "<span class='text-primary'>UI</span> Developer", pause: 1500 },
+                                            { deleteChars: 12 },
+                                            { text: "<span class='text-primary'>Frontend</span> Developer", pause: 1500 },
+                                            { deleteChars: 18 },
+                                            { text: "<span class='text-primary'>Backend</span> Developer", pause: 1500 },
+                                            { deleteChars: 18 },
+                                            { text: "<span class='text-primary'>Full Stack</span> Developer", pause: 1500 },
+                                            { deleteAll: true }
+                                        ]} />
                                 </h1>
 
                                 <p className="text-muted-foreground max-w-md text-base md:text-lg">
@@ -86,8 +91,8 @@ function Developer() {
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                             >
-                                <div className="bg-card border border-border shadow-lg rounded-lg overflow-hidden">
-                                    <CodeSnippet code={codeExample} />
+                                <div className="hidden sm:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
+                                    <CodeSnippet />
                                 </div>
                             </motion.div>
                         </div>
