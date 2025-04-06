@@ -6,6 +6,8 @@ import AboutMe from './pages/AboutMe'
 import Projects from './pages/Projects'
 import Blogs from './pages/Blogs'
 import Contact from './pages/Contact'
+import { Toaster } from '@/components/ui/sonner'
+
 
 
 const appRouter = createBrowserRouter([
@@ -39,7 +41,11 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={appRouter} />
+    <div>
+      <RouterProvider router={appRouter} />
+      <Toaster position='bottom-center' richColors />
+    </div>
+
   )
 }
 
