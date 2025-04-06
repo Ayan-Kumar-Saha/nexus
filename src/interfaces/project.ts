@@ -1,10 +1,11 @@
 export interface IProject {
     id: number;
+    image?: string
     name: string;
     description: string;
     tags: string[];
     isCodeAvailable: boolean;
-    codebaseLink: string;
+    codebaseUrl: string;
     isDemoAvailable: boolean;
-    demoLink: string;
+    demoUrl: string;
 }

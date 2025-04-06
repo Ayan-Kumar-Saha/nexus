@@ -4,20 +4,33 @@ import PageHeader from "../components/PageHeader";
 import SocialCard from "../components/SocialCard";
 import { CONTACT_METHODS, pageDescription, pageTitle } from "../models/contacts";
 import { SOCIAL_LINKS } from "../models/social-links";
-import { LuSend } from "react-icons/lu";
+import { Button } from "@/components/ui/button";
+import { Send } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 
 const Contact = () => {
 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    })
     const [isSubmitting] = useState(false);
 
+    const handleChange = () => { }
+
+    const onFormSubmit = () => { }
+
     return (
-        <>
+        <div className="space-y-12">
             <PageHeader title={pageTitle} description={pageDescription} />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
                 {/* Contact Methods */}
                 <div className="lg:col-span-1 space-y-6">
-                    <h3 className="text-xl font-mono font-bold">Get in Touch</h3>
+                    <h3 className="text-xl font-bold">Get in Touch</h3>
 
                     <div className="space-y-4">
                         {
@@ -26,7 +39,7 @@ const Contact = () => {
                     </div>
 
                     <div className="mt-8">
-                        <h3 className="text-xl font-mono font-bold mb-4">Connect</h3>
+                        <h3 className="text-xl font-bold mb-4">Connect</h3>
                         <div className="flex space-x-4">
                             {
                                 SOCIAL_LINKS.map(method => <SocialCard key={method.id} method={method} />)
@@ -37,58 +50,80 @@ const Contact = () => {
 
                 {/* Contact Form */}
                 <div className="lg:col-span-2">
-                    <h3 className="text-xl font-mono font-bold mb-6">Send a Message</h3>
-                    <form className="space-y-6">
+                    <h3 className="text-xl font-bold mb-6">Send a Message</h3>
+                    <form className="space-y-6" onSubmit={onFormSubmit}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="flex flex-col space-y-2">
-                                <label htmlFor="name" className="text-sm text-secondary-text">
+                            <div className="space-y-2">
+                                <label htmlFor="name" className="text-sm text-muted-foreground">
                                     Name
                                 </label>
-                                <input type="text"
-                                    className="text-sm border border-border-default rounded-md py-2 px-3 outline-primary-text"
-                                    placeholder="Enter your name" />
+                                <Input
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Your name"
+                                />
                             </div>
-                            <div className="flex flex-col space-y-2">
-                                <label htmlFor="email" className="text-sm text-secondary-text">
+                            <div className="space-y-2">
+                                <label htmlFor="email" className="text-sm text-muted-foreground">
                                     Email
                                 </label>
-                                <input type="text"
-                                    className="text-sm border border-border-default rounded-md py-2 px-3 outline-primary-text"
-                                    placeholder="Enter your email" />
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Your email"
+                                />
                             </div>
                         </div>
-                        <div className="flex flex-col space-y-2">
-                            <label htmlFor="subject" className="text-sm text-secondary-text">
+                        <div className="space-y-2">
+                            <label htmlFor="subject" className="text-sm text-muted-foreground">
                                 Subject
                             </label>
-                            <input type="text"
-                                className="text-sm border border-border-default rounded-md py-2 px-3 outline-primary-text"
-                                placeholder="Subject of your matter" />
+                            <Input
+                                id="subject"
+                                name="subject"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                                placeholder="Subject of your message"
+                            />
                         </div>
-                        <div className="flex flex-col space-y-2">
-                            <label htmlFor="message" className="text-sm text-secondary-text">
+                        <div className="space-y-2">
+                            <label htmlFor="message" className="text-sm text-muted-foreground">
                                 Message
                             </label>
-                            <textarea rows={6}
-                                className="text-sm border border-border-default rounded-md py-2 px-3 outline-primary-text" />
+                            <Textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                                placeholder="Your message..."
+                                rows={6}
+                            />
                         </div>
-                        {
-                            !isSubmitting
-                                ? (
-                                    <button className="inline-flex items-center justify-center gap-2 cursor-pointer rounded-md text-sm h-10 py-2 px-4 bg-accent-text hover:bg-accent-text/90 text-white transition-colors">
-                                        <LuSend /><span>Send Message</span>
-                                    </button>
-                                )
-                                : (
-                                    <button className="inline-flex items-center justify-center gap-2 cursor-pointer rounded-md text-sm h-10 py-2 px-4 bg-accent-text/90 text-white transition-colors">
-                                        <LuSend /><span>Sending...</span>
-                                    </button>
-                                )
-                        }
+                        <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto cursor-pointer">
+                            {isSubmitting ? (
+                                <span className="flex items-center gap-2">
+                                    <div className="animate-spin w-4 h-4 border-2 border-current border-t-transparent rounded-full" />
+                                    Sending...
+                                </span>
+                            ) : (
+                                <span className="flex items-center gap-2">
+                                    <Send size={16} />
+                                    Send Message
+                                </span>
+                            )}
+                        </Button>
                     </form>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

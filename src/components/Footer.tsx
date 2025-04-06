@@ -1,28 +1,33 @@
-import { Link } from "react-router";
 import { ISocialLink } from "../interfaces/social-link";
 import { SOCIAL_LINKS } from "../models/social-links";
 
 const Footer = () => {
 
-    const year = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="border-t border-border-default">
-            <div className="nx-container py-8">
-                <div className="flex justify-between items-center text-secondary-text">
-                    <span className="text-sm">&copy; {year} Ayan Kumar Saha. All rights reserved.</span>
+        <footer className="border-t border-border py-8 bg-background">
+            <div className="nx-container">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                    <div className="mb-4 md:mb-0">
+                        <p className="text-muted-foreground text-sm">
+                            © {currentYear} Ayan Kumar Saha. All rights reserved.
+                        </p>
+                    </div>
 
-                    <ul className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4">
                         {
                             SOCIAL_LINKS.map(({ id, icon: Icon, link }: ISocialLink) => {
                                 return (
-                                    <li key={id}>
-                                        <Link to={link} target="_blank"> <Icon className="text-xl" /></Link>
-                                    </li>
+                                    <a key={id} href={link}
+                                        target="_blank"
+                                        className="text-muted-foreground hover:text-primary transition-colors">
+                                        <Icon className="text-xl" />
+                                    </a>
                                 )
                             })
                         }
-                    </ul>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -8,10 +8,10 @@ type IPageHeaderProps = {
 const PageHeader: FunctionComponent<IPageHeaderProps> = ({ title, description }) => {
     return (
         <>
-            <h1 className="mb-6 font-mono font-bold text-3xl">
-                <span className="text-accent-text">&gt;</span> {title}
+            <h1 className="font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1 mb-6">
+                <span className="text-primary">&gt;</span> {title}
             </h1>
-            <p className="text-secondary-text mb-8">{description}</p>
+            <p className="text-muted-foreground mb-8">{description}</p>
         </>
     )
 }

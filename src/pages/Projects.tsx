@@ -1,16 +1,16 @@
 import { LuSearch } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
 import { pageTitle, pageDescription, PROJECT_LIST } from "../models/projects";
-import { IProject } from "../interfaces/project";
 import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
 
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-    const tags: string[] = Array.from(new Set(PROJECT_LIST.flatMap(project => project.tags)));
+    const allTags: string[] = Array.from(new Set(PROJECT_LIST.flatMap(project => project.tags)));
 
     const onTagClick = (tag: string) => {
         if (selectedTags.includes(tag)) {
@@ -41,23 +41,47 @@ const Projects = () => {
                     onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="mt-6">
-                <p className="text-secondary-text text-sm mb-2">Filter by technology</p>
+                <p className="text-sm text-muted-foreground mb-2">Filter by technology:</p>
                 <div className="flex flex-wrap gap-2 my-4">
                     {
-                        tags.map((tag, index) => (
-                            <button className={`text-xs cursor-pointer border border-border-default h-9 px-3 rounded-md transition-all ${selectedTags.includes(tag) ? 'bg-accent-text text-white' : 'bg-page-background hover:bg-code-background  '}`}
-                                key={index}
-                                onClick={() => onTagClick(tag)}>{tag}</button>
+                        allTags.map(tag => (
+                            <Button
+                                key={tag}
+                                variant={selectedTags.includes(tag) ? "default" : "outline"}
+                                size="sm"
+                                onClick={() => onTagClick(tag)}
+                                className="text-xs cursor-pointer"
+                            >
+                                {tag}
+                            </Button>
                         ))
                     }
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                {
-                    filteredProjects.map((project: IProject) => <ProjectCard key={project.id} project={project} />)
-                }
-            </div>
+            {
+                filteredProjects.length > 0
+                    ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                            {filteredProjects.map((project) => (
+                                <ProjectCard key={project.id} project={project} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-10">
+                            <p className="text-muted-foreground">No projects found matching your criteria.</p>
+                            <Button
+                                variant="link"
+                                onClick={() => {
+                                    setSearchTerm('');
+                                    setSelectedTags([]);
+                                }}
+                            >
+                                Clear filters
+                            </Button>
+                        </div>
+                    )
+            }
         </>
     )
 }

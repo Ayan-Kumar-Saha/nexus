@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 const Layout = () => {
     return (
-        <div className="w-full min-h-screen">
+        <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
                 <div className="nx-container py-6 md:py-12">

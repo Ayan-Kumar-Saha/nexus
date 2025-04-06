@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
 import { IProject } from "../interfaces/project";
-import { LuCode, LuExternalLink, LuGithub } from "react-icons/lu";
+import { Code, ExternalLink, Github } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 interface IProjectCardProps {
     project: IProject
@@ -8,51 +10,63 @@ interface IProjectCardProps {
 
 const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
 
-    const { name, description, tags, isCodeAvailable, isDemoAvailable, codebaseLink, demoLink } = project;
+    const { image, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
 
     return (
-        <div className="bg-card-background h-full overflow-hidden flex flex-col border border-border-default card-hover rounded-xl">
-            <h3 className="flex items-center gap-3 font-mono p-6">
-                <LuCode className="text-lg text-accent-text" /><span className="text-xl font-bold">{name}</span>
-            </h3>
-            <div className="flex-grow p-6 pt-0">
-                <p className="text-secondary-text mb-4">{description}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                    {
-                        tags.map((tag, index) => (
-                            <div key={index} className="py-0.5 px-2.5 text-xs font-semibold bg-code-background">{tag}</div>
-                        ))
-                    }
+        <Card className="bg-card overflow-hidden card-hover border-border h-full flex flex-col">
+            {image && (
+                <div className="aspect-video overflow-hidden border-b border-border">
+                    <img
+                        src={image}
+                        alt={name}
+                        className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    />
                 </div>
-            </div>
-
-            <div className="flex justify-between items-center border-t border-border-default p-4 text-secondary-text min-h-15">
+            )}
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                    <Code size={18} className="text-primary" />
+                    {name}
+                </CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+                <p className="text-muted-foreground mb-4">{description}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                    {tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="bg-secondary/50">
+                            {tag}
+                        </Badge>
+                    ))}
+                </div>
+            </CardContent>
+            <CardFooter className="flex justify-between pt-4 border-t border-border">
                 {
-                    isCodeAvailable
-                        ? (
-                            <a href={codebaseLink}
-                                className="flex items-center gap-1 hover:text-accent-text"
-                                target="_blank">
-                                <LuGithub />
-                                <span>Code</span>
-                            </a>
-                        )
-                        : <span></span>
+                    isCodeAvailable && (
+                        <a
+                            href={codebaseUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                            <Github size={16} />
+                            <span>Code</span>
+                        </a>
+                    )
                 }
                 {
-                    isDemoAvailable
-                        ? (
-                            <a href={demoLink}
-                                className="flex items-center gap-1 hover:text-accent-text"
-                                target="_blank">
-                                <LuExternalLink />
-                                <span>Demo</span>
-                            </a>
-                        )
-                        : <span></span>
-                }
-            </div>
-        </div>
+                    isDemoAvailable && (
+                        <a
+                            href={demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                            <ExternalLink size={16} />
+                            <span>Demo</span>
+                        </a>
+                    )}
+            </CardFooter>
+        </Card>
     );
 }
 
