@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import { IContactLink } from "../interfaces/contact-link";
-import { CONTACT_LINKS } from "../models/contact-links";
+import { ISocialLink } from "../interfaces/social-link";
+import { SOCIAL_LINKS } from "../models/social-links";
 
 const Footer = () => {
 
@@ -14,7 +14,7 @@ const Footer = () => {
 
                     <ul className="flex items-center space-x-4">
                         {
-                            CONTACT_LINKS.map(({ id, icon: Icon, link }: IContactLink) => {
+                            SOCIAL_LINKS.map(({ id, icon: Icon, link }: ISocialLink) => {
                                 return (
                                     <li key={id}>
                                         <Link to={link} target="_blank"> <Icon className="text-xl" /></Link>

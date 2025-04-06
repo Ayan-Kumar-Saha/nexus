@@ -1,7 +1,7 @@
 import { LuGithub, LuLinkedin, LuMail, LuTwitter } from "react-icons/lu";
-import { IContactLink } from "../interfaces/contact-link";
+import { ISocialLink } from "../interfaces/social-link";
 
-export const CONTACT_LINKS: IContactLink[] = [
+export const SOCIAL_LINKS: ISocialLink[] = [
     {
         id: 1,
         name: 'Linkedin',

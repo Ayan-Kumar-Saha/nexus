@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 
-export interface IContactLink {
+export interface ISocialLink {
     id: number;
     name: string;
     icon: IconType;
