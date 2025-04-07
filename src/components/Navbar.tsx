@@ -2,7 +2,6 @@ import { FunctionComponent, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { NAV_LINKS } from "../constants/navlinks";
 import { INavLink } from "../interfaces/navlink";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const Navbar: FunctionComponent = () => {
@@ -11,37 +10,6 @@ const Navbar: FunctionComponent = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-    };
-
-    const menuVariants = {
-        hidden: {
-            opacity: 0,
-            height: 0
-        },
-        visible: {
-            opacity: 1,
-            height: "auto",
-            transition: {
-                duration: 0.2,
-                staggerChildren: 0.03
-            }
-        },
-        exit: {
-            opacity: 0,
-            height: 0,
-            transition: {
-                duration: 0.2,
-                when: "afterChildren",
-                staggerChildren: 0.03,
-                staggerDirection: -1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: -5 },
-        visible: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -5 }
     };
 
     return (
@@ -67,11 +35,7 @@ const Navbar: FunctionComponent = () => {
                                             >
                                                 {link.name}
                                                 {location.pathname === link.path && (
-                                                    <motion.span
-                                                        layoutId="navbar-indicator"
-                                                        className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary rounded-full"
-                                                        transition={{ duration: 0.3 }}
-                                                    />
+                                                    <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary rounded-full" />
                                                 )}
                                             </Link>
                                         </li>
@@ -93,23 +57,14 @@ const Navbar: FunctionComponent = () => {
                     </div>
                 </nav>
 
-                {/* Mobile Menu */}
-                <AnimatePresence>
-                    {isMenuOpen && (
-                        <motion.div
-                            className="md:hidden py-3"
-                            variants={menuVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
-                        >
+                {
+                    isMenuOpen && (
+                        <div className="md:hidden py-3">
                             <ul className="flex flex-col space-y-2">
-                                {NAV_LINKS.map((link: INavLink) => (
-                                    <motion.li
-                                        key={link.name}
-                                        variants={itemVariants}
-                                    >
+                                {
+                                    NAV_LINKS.map((link: INavLink) => (
                                         <Link
+                                            key={link.name}
                                             to={link.path}
                                             className={`block py-2 hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'
                                                 }`}
@@ -117,14 +72,14 @@ const Navbar: FunctionComponent = () => {
                                         >
                                             {link.name}
                                         </Link>
-                                    </motion.li>
-                                ))}
+                                    ))
+                                }
                             </ul>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        </header>
+                        </div>
+                    )
+                }
+            </div >
+        </header >
     )
 }
 

@@ -1,4 +1,4 @@
-import { LuGithub, LuLinkedin, LuMail, LuTwitter } from "react-icons/lu";
+import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
 import { FaStackOverflow } from "react-icons/fa";
 import { ISocialLink } from "../interfaces/social-link";
 

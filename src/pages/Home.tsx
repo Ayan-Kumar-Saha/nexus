@@ -8,8 +8,7 @@ import { CONTACT_METHODS } from "@/constants/contacts";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 import { SOCIAL_LINKS } from "@/constants/social-links";
 import { ISocialLink } from "@/interfaces/social-link";
-import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CloudDownload, Coffee, ExternalLink } from "lucide-react";
 import { Link } from 'react-router'
 
 const Home = () => {
@@ -20,12 +19,7 @@ const Home = () => {
                     <div className="max-w-4xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="space-y-6"
-                            >
+                            <div className="space-y-6">
                                 <div className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
                                     <span>Available for new positions</span>
                                 </div>
@@ -64,7 +58,7 @@ const Home = () => {
                                     <Button variant="outline" asChild>
                                         <a href="assets/docs/resume_ayan_kumar_saha.pdf" download>
                                             <CloudDownload className="mr-2 h-4 w-4" />
-                                            Download Resume
+                                            Download CV
                                         </a>
                                     </Button>
                                 </div>
@@ -80,17 +74,11 @@ const Home = () => {
                                             ))
                                     }
                                 </div>
-                            </motion.div>
+                            </div>
 
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                            >
-                                <div className="hidden sm:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
-                                    <CodeSnippet />
-                                </div>
-                            </motion.div>
+                            <div className="hidden sm:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
+                                <CodeSnippet />
+                            </div>
                         </div>
                     </div>
                 </div>

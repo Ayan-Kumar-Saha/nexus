@@ -2,7 +2,6 @@ import PositionCard from "@/components/PositionCard";
 import SectionHeader from "@/components/SectionHeader";
 import SkillCategoryCard from "@/components/SkillCategoryCard";
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { CONTACT_METHODS } from "@/constants/contacts";
 import { EXPERIENCES } from "@/constants/experiences";
 import { ABOUT_PAGE_META } from "@/constants/page-meta";
