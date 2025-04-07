@@ -56,7 +56,7 @@ const Home = () => {
                                         </Link>
                                     </Button>
                                     <Button variant="outline" asChild>
-                                        <a href="assets/docs/resume_ayan_kumar_saha.pdf" download>
+                                        <a href="docs/resume_ayan_kumar_saha.pdf" download>
                                             <CloudDownload className="mr-2 h-4 w-4" />
                                             Download CV
                                         </a>

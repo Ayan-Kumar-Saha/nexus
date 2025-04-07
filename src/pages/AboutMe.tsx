@@ -35,7 +35,7 @@ const AboutMe = () => {
                             </Link>
                         </Button>
                         <Button variant="outline" asChild>
-                            <a href="/resume.pdf" download>
+                            <a href="docs/resume_ayan_kumar_saha.pdf" download>
                                 <Download className="mr-2" size={16} />
                                 Download CV
                             </a>
