@@ -17,15 +17,17 @@ const Footer = () => {
 
                     <div className="flex items-center space-x-4">
                         {
-                            SOCIAL_LINKS.map(({ id, icon: Icon, link }: ISocialLink) => {
-                                return (
-                                    <a key={id} href={link}
-                                        target="_blank"
-                                        className="text-muted-foreground hover:text-primary transition-colors">
-                                        <Icon className="text-xl" />
-                                    </a>
-                                )
-                            })
+                            SOCIAL_LINKS
+                                .filter((link: ISocialLink) => link.isActive)
+                                .map(({ id, icon: Icon, link }: ISocialLink) => {
+                                    return (
+                                        <a key={id} href={link}
+                                            target="_blank"
+                                            className="text-muted-foreground hover:text-primary transition-colors">
+                                            <Icon className="text-xl" />
+                                        </a>
+                                    )
+                                })
                         }
                     </div>
                 </div>

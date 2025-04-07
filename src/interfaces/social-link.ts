@@ -5,4 +5,5 @@ export interface ISocialLink {
     name: string;
     icon: IconType;
     link: string;
+    isActive: boolean;
 }

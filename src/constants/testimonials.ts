@@ -13,6 +13,7 @@ export const TESTIMONIALS: ITestimonial[] = [
         id: 2,
         author: "Sandeep Banerjee",
         designation: "Technical Program Manager",
+        organization: "Simplified Solutions",
         profileImage: "images/testimonials/sandeep_banerjee.jpeg",
         quote: "Ayan has taken ownership of his projects from end-to-end. He has figured out solutions on his own when faced with challenging situations. He is a great team player who contributes towards the success of the team by helping other team members. He thinks through the process. Ayan is a great asset to any team he is a part of. I wish him success and growth in his professional journey. "
     },
