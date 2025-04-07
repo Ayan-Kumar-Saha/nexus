@@ -20,7 +20,8 @@ export const HOME_PAGE_META = {
 export const ABOUT_PAGE_META = {
     title: "about me",
     description: "Feel free to reach out with any questions, project inquiries, or just to say hello. I'll do my best to respond promptly.",
-    skill_header: "skills & technologies"
+    skill_header: "skills & technologies",
+    experience_header: "experiences"
 }
 
 export const CONTACT_PAGE_META = {
