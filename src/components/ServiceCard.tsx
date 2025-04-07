@@ -7,7 +7,6 @@ interface IServiceCardProps {
 }
 
 const ServiceCard: FunctionComponent<IServiceCardProps> = ({ service }) => {
-
     const { icon: Icon, title, description } = service;
     return (
         <Card className="border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
