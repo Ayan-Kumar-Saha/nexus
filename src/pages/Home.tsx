@@ -16,7 +16,7 @@ const Home = () => {
         <div className="space-y-16 md:space-y-24">
             <section className="relative rounded-xl overflow-hidden">
                 <div className="relative z-10 py-8 md:py-16 px-4">
-                    <div className="max-w-4xl mx-auto">
+                    <div className="mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
                             <div className="space-y-6">
@@ -24,7 +24,7 @@ const Home = () => {
                                     <span>Available for new positions</span>
                                 </div>
 
-                                <h1 className="text-2xl md:text-3xl lg:text-3xl tracking-tight font-bold">
+                                <h1 className="text-3xl md:text-4xl tracking-tight font-bold">
                                     <span>I'm <span className="text-primary">Ayan</span></span>
                                     <TypewriterBuilder
                                         className="mt-2"
