@@ -1,4 +1,5 @@
-import PositionCard from "@/components/PositionCard";
+import ExperienceCard from "@/components/ExperienceCard";
+import PositionCard from "@/components/ExperienceCard";
 import SectionHeader from "@/components/SectionHeader";
 import SkillCategoryCard from "@/components/SkillCategoryCard";
 import { Button } from "@/components/ui/button";
@@ -18,13 +19,16 @@ const AboutMe = () => {
                 <div>
                     <div className="my-3 text-sm md:text-base">
                         <p className="text-justify">
-                            Hello! I'm Ayan Kumar Saha, a passionate full-stack developer with a strong focus on creating clean, efficient, and user-friendly applications. With over 5 years of experience in web development, I've worked on a wide range of projects from small business websites to large enterprise applications.
+                            Hey, I’m Ayan Kumar Saha — a full-stack developer who’s all about building things that work and feel right. Clean code, clear intent, and a good user experience — that’s my happy place.
                         </p>
                         <p className="mt-3 text-justify">
-                            I believe in continuous learning and staying up-to-date with the latest technologies and best practices. When I'm not coding, you can find me contributing to open-source projects, writing technical blog posts, or exploring new hiking trails.
+                            I’ve been doing this for over five years now. From small websites to enterprise-level systems, I’ve worn a lot of hats — but it’s never been just about ticking boxes. I care about the craft. I enjoy solving problems that matter and making digital spaces better.
                         </p>
                         <p className="mt-3 text-justify">
-                            I'm currently based in {CONTACT_METHODS.find(method => method.name === 'Location')?.value} and open to remote opportunities as well as interesting freelance projects.
+                            Outside of work, I’m a finance enthusiast, an unapologetic cricket addict, and someone who genuinely enjoys the occasional escape into the hills.
+                        </p>
+                        <p className="mt-3 text-justify">
+                            I’m currently based in {CONTACT_METHODS.find(method => method.name === 'Location')?.value} — open to remote roles and freelance gigs that are worth the time and energy. If you’ve got something interesting, let’s chat.
                         </p>
                     </div>
                     <div className="flex mt-10 gap-3">
@@ -61,25 +65,9 @@ const AboutMe = () => {
 
             <section className="mt-16">
                 <SectionHeader title={ABOUT_PAGE_META.experience_header} />
-                <div className="space-y-8">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {
-                        EXPERIENCES.map((company, index) => (
-                            <div key={index} className="relative">
-                                <div className="flex items-start">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary mr-3">
-                                        <Briefcase size={16} />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-mono">{company.company}</h3>
-                                    </div>
-                                </div>
-                                <div className="ml-10 space-y-4 mt-3">
-                                    {company.positions.map((position, posIndex) => (
-                                        <PositionCard key={posIndex} position={position} />
-                                    ))}
-                                </div>
-                            </div>
-                        ))
+                        EXPERIENCES.map((company) => <ExperienceCard key={company.id} experience={company} />)
                     }
                 </div>
             </section>

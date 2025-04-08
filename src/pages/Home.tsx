@@ -45,7 +45,7 @@ const Home = () => {
                                 </h1>
 
                                 <p className="text-muted-foreground max-w-md text-base md:text-lg">
-                                    I design and build digital experiences that are fast, accessible, and user-focused.
+                                    I design and build beautifully simple things
                                 </p>
 
                                 <div className="flex flex-wrap gap-4 pt-2">
@@ -103,7 +103,7 @@ const Home = () => {
                         <Button size="lg" asChild>
                             <Link to="/contact">
                                 <Coffee className="mr-2 h-5 w-5" />
-                                Get in Touch
+                                Let’s cook.
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" asChild>

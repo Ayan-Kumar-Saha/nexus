@@ -1,35 +1,35 @@
 export const HOME_PAGE_META = {
     services: {
         title: "what i do",
-        description: "I specialize in building modern web applications with a focus on performance, accessibility, and user experience"
+        description: "From idea to execution — and everything beyond."
     },
     featured_project: {
         title: "featured projects",
-        description: "Some of my recent work that showcases my skills and experience"
+        description: "Not just code — these are ideas and a bit of craft in every commit."
     },
     testimonial: {
         title: "client testimonials",
-        description: "What people are saying about working with me"
+        description: "Don't trust me? Okay. Feedback that speaks louder than bios"
     },
     get_in_touch: {
         title: "let's work together",
-        description: "I'm currently available for freelance projects or full-time positions. If you're interested in working together, let's connect!"
+        description: " You got something? Open position, freelance project or anything else?"
     }
 }
 
 export const ABOUT_PAGE_META = {
     title: "about me",
-    description: "Feel free to reach out with any questions, project inquiries, or just to say hello. I'll do my best to respond promptly.",
+    description: "Here’s what makes me — and my code — tick, beyond the code.",
     skill_header: "skills & technologies",
     experience_header: "experiences"
 }
 
 export const CONTACT_PAGE_META = {
     title: "contact",
-    description: "Feel free to reach out with any questions, project inquiries, or just to say hello. I'll do my best to respond promptly."
+    description: "I don’t just build things — I reply fast too. Reach out, let’s talk."
 }
 
 export const PROJECT_PAGE_META = {
     title: "projects",
-    description: "A collection of my recent development projects. Each project includes source code and may include a live demo."
+    description: "A glimpse into the things I’ve built — with purpose, precision, and a bit of personality."
 }

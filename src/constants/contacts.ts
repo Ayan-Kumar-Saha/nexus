@@ -21,6 +21,6 @@ export const CONTACT_METHODS: IContactMethod[] = [
         icon: LuMapPin,
         name: 'Location',
         value: 'Chandannagar, WB, India',
-        link: ''
+        link: 'https://www.google.com/search?q=chandannagar'
     }
 ]

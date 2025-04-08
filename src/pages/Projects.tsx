@@ -42,7 +42,7 @@ const Projects = () => {
                     onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="mt-6">
-                <p className="text-sm text-muted-foreground mb-2">Filter by technology:</p>
+                <p className="text-sm text-muted-foreground mb-2">Filter by tags:</p>
                 <div className="flex flex-wrap gap-2 my-4">
                     {
                         allTags.map(tag => (
