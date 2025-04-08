@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button";
 import { PROJECT_PAGE_META } from "@/constants/page-meta";
 
 const Projects = () => {
-
+    const activeProjects = PROJECT_LIST.filter(proj => proj.isActive);
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-    const allTags: string[] = Array.from(new Set(PROJECT_LIST.flatMap(project => project.tags)));
+    const allTags: string[] = Array.from(new Set(activeProjects.flatMap(project => project.tags)));
 
     const onTagClick = (tag: string) => {
         if (selectedTags.includes(tag)) {
@@ -21,7 +21,7 @@ const Projects = () => {
         }
     }
 
-    const filteredProjects = PROJECT_LIST.filter(project => {
+    const filteredProjects = activeProjects.filter(project => {
         const matchBySearchTerm = searchTerm === '' || (
             project.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
             project.description.toLowerCase().includes(searchTerm.trim().toLowerCase())

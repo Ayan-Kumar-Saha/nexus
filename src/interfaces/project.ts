@@ -9,4 +9,5 @@ export interface IProject {
     isDemoAvailable: boolean;
     demoUrl: string;
     isFeatured: boolean;
+    isActive: boolean;
 }

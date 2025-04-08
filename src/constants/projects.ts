@@ -11,7 +11,8 @@ export const PROJECT_LIST: IProject[] = [
         isDemoAvailable: true,
         demoUrl: '',
         isFeatured: true,
-        imagePath: 'images/placeholder.svg'
+        imagePath: 'images/placeholder.svg',
+        isActive: true
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export const PROJECT_LIST: IProject[] = [
         isDemoAvailable: true,
         demoUrl: 'https://anuprerna.com',
         isFeatured: true,
-        imagePath: 'images/placeholder.svg'
+        imagePath: 'images/placeholder.svg',
+        isActive: true
     },
     {
         id: 3,
@@ -35,6 +37,7 @@ export const PROJECT_LIST: IProject[] = [
         isDemoAvailable: true,
         demoUrl: 'https://bloomsight.io/',
         isFeatured: true,
-        imagePath: 'images/placeholder.svg'
+        imagePath: 'images/placeholder.svg',
+        isActive: true
     }
 ]

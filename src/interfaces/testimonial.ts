@@ -5,4 +5,5 @@ export interface ITestimonial {
     designation: string;
     organization?: string
     quote: string;
+    isActive: boolean;
 }

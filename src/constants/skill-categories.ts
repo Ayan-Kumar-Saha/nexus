@@ -1,5 +1,5 @@
 import { ISkillCategory } from "@/interfaces/skill-category";
-import { Cloud, Code, Database, GitBranch, Layout, PenTool, Server } from "lucide-react";
+import { Cloud, Code, Database, GitBranch, Layout, Server } from "lucide-react";
 
 export const SKILL_CATEGORIES: ISkillCategory[] = [
     {
