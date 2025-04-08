@@ -1,5 +1,4 @@
 import ExperienceCard from "@/components/ExperienceCard";
-import PositionCard from "@/components/ExperienceCard";
 import SectionHeader from "@/components/SectionHeader";
 import SkillCategoryCard from "@/components/SkillCategoryCard";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,7 @@ import { EXPERIENCES } from "@/constants/experiences";
 import { ABOUT_PAGE_META } from "@/constants/page-meta";
 import { SKILL_CATEGORIES } from "@/constants/skill-categories";
 import { ISkillCategory } from "@/interfaces/skill-category";
-import { Briefcase, Coffee, Download } from "lucide-react";
+import { Coffee, Download } from "lucide-react";
 import { Link } from "react-router";
 
 const AboutMe = () => {
