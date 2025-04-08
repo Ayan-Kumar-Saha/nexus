@@ -15,7 +15,7 @@ const FeaturedProjects = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     PROJECT_LIST
-                        .filter((project: IProject) => project.isFeatured)
+                        .filter((project: IProject) => project.isFeatured && project.isActive)
                         .map((project: IProject) => <ProjectCard key={project.id} project={project} />)
                 }
             </div>
