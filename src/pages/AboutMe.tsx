@@ -46,8 +46,8 @@ const AboutMe = () => {
                     </div>
                 </div>
                 <div className="flex justify-center items-center">
-                    <div className="border-4 border-primary w-[230px] h-[230px] rounded-full overflow-hidden">
-                        <img src='images/placeholder.svg' className="w-full h-full object-cover" />
+                    <div className="border-4 border-primary w-[300px] h-[300px] rounded-full overflow-hidden">
+                        <img src='images/dp.png' className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>
