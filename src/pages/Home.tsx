@@ -67,8 +67,8 @@ const Home = () => {
                                     {
                                         SOCIAL_LINKS
                                             .filter((link: ISocialLink) => link.isActive)
-                                            .map(({ link, icon: Icon }: ISocialLink) => (
-                                                <a href={link} target="_blank" className="text-muted-foreground hover:text-primary transition" aria-label="GitHub">
+                                            .map(({ link, icon: Icon, id }: ISocialLink) => (
+                                                <a href={link} key={id} target="_blank" className="text-muted-foreground hover:text-primary transition" aria-label="GitHub">
                                                     <Icon size={20} />
                                                 </a>
                                             ))
