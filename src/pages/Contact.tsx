@@ -38,11 +38,11 @@ const Contact: FunctionComponent = () => {
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             e.currentTarget,
             { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-        ).then((result) => {
+        ).then(() => {
             toast('Message sent!', {
                 description: "Thanks for reaching out. I'll get back to you soon.",
             });
-        }).catch((err) => {
+        }).catch(() => {
             toast('Something went wrong!', {
                 description: "Please try again later",
             });
