@@ -9,20 +9,47 @@ import { Send } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { CONTACT_PAGE_META } from "@/constants/page-meta";
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 const Contact: FunctionComponent = () => {
 
-    const [formData] = useState({
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
         subject: '',
         message: '',
     })
-    const [isSubmitting] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState("");
 
-    const handleChange = () => { }
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    }
 
-    const onFormSubmit = () => { }
+    const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            e.currentTarget,
+            { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+        ).then((result) => {
+            toast('Message sent!', {
+                description: "Thanks for reaching out. I'll get back to you soon.",
+            });
+        }).catch((err) => {
+            toast('Something went wrong!', {
+                description: "Please try again later",
+            });
+        }).finally(() => {
+            setIsSubmitting(false);
+        })
+    }
 
     return (
         <div className="space-y-12">
@@ -73,7 +100,7 @@ const Contact: FunctionComponent = () => {
                                 <Input
                                     id="email"
                                     name="email"
-                                    value={formData.name}
+                                    value={formData.email}
                                     onChange={handleChange}
                                     required
                                     placeholder="Your email"
@@ -87,7 +114,7 @@ const Contact: FunctionComponent = () => {
                             <Input
                                 id="subject"
                                 name="subject"
-                                value={formData.name}
+                                value={formData.subject}
                                 onChange={handleChange}
                                 required
                                 placeholder="Subject of your message"
@@ -107,7 +134,12 @@ const Contact: FunctionComponent = () => {
                                 rows={6}
                             />
                         </div>
-                        <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto cursor-pointer">
+                        <ReCAPTCHA
+                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                            onChange={(token) => setCaptchaToken(token || "")}
+                        />
+
+                        <Button type="submit" disabled={isSubmitting || !captchaToken} className="w-full sm:w-auto cursor-pointer">
                             {isSubmitting ? (
                                 <span className="flex items-center gap-2">
                                     <div className="animate-spin w-4 h-4 border-2 border-current border-t-transparent rounded-full" />
