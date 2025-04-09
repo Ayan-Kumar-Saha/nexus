@@ -1,52 +1,25 @@
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import Layout from './Layout'
-import Home from './pages/Home'
-import AboutMe from './pages/AboutMe'
-import Projects from './pages/Projects'
-import Blogs from './pages/Blogs'
-import Contact from './pages/Contact'
-import { Toaster } from '@/components/ui/sonner'
+import { NAV_LINKS } from './constants/navlinks'
 
-
-
-const appRouter = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/about-me',
-        element: <AboutMe />
-      },
-      {
-        path: '/projects',
-        element: <Projects />
-      },
-      {
-        path: '/blogs',
-        element: <Blogs />
-      },
-      {
-        path: '/contact',
-        element: <Contact />
-      }
-    ]
-  }
-])
 
 function App() {
   return (
-    <div>
-      <RouterProvider router={appRouter} />
-      <Toaster position='bottom-center' richColors />
-    </div>
-
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+        {
+          NAV_LINKS
+            .filter(link => link.isActive)
+            .map(({ path, element: Page}) => (
+              <Route path={path} element={<Page />} />
+            ))
+        }
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;

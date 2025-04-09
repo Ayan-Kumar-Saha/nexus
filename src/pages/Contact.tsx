@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import ContactCard from "../components/ContactCard";
 import SectionHeader from "../components/SectionHeader";
 import SocialCard from "../components/SocialCard";
@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { CONTACT_PAGE_META } from "@/constants/page-meta";
 
-const Contact = () => {
+const Contact: FunctionComponent = () => {
 
     const [formData] = useState({
         name: '',

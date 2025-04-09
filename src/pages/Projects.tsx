@@ -2,11 +2,11 @@ import { LuSearch } from "react-icons/lu";
 import SectionHeader from "../components/SectionHeader";
 import { PROJECT_LIST } from "../constants/projects";
 import ProjectCard from "../components/ProjectCard";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PROJECT_PAGE_META } from "@/constants/page-meta";
 
-const Projects = () => {
+const Projects: FunctionComponent = () => {
     const activeProjects = PROJECT_LIST.filter(proj => proj.isActive);
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
