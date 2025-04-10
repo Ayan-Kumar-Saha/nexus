@@ -4,14 +4,14 @@ export const PROJECT_LIST: IProject[] = [
     {
         id: 1,
         name: 'Nexus',
-        description: 'My personal portfolio',
+        description: 'My personal developer portfolio app',
         tags: ['Web', 'React', 'Tailwind'],
         isCodeAvailable: true,
         codebaseUrl: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: true,
         demoUrl: '',
         isFeatured: true,
-        imagePath: 'images/placeholder.svg',
+        imagePath: 'images/projects/nexus.png',
         isActive: true
     },
     {
