@@ -9,7 +9,7 @@ export const PROJECT_LIST: IProject[] = [
         isCodeAvailable: true,
         codebaseUrl: 'https://www.github.com/Ayan-Kumar-Saha/nexus',
         isDemoAvailable: true,
-        demoUrl: '',
+        demoUrl: 'https://ayankumarsaha.dev',
         isFeatured: true,
         imagePath: 'images/projects/nexus.png',
         isActive: true
