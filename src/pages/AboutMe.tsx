@@ -14,8 +14,8 @@ const AboutMe = () => {
     return (
         <>
             <SectionHeader title={ABOUT_PAGE_META.title} description={ABOUT_PAGE_META.description} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
+            <div className="flex flex-col-reverse md:flex-row gap-6">
+                <div className="flex-1/2">
                     <div className="my-3 text-sm md:text-base">
                         <p className="text-justify">
                             Hey, I’m Ayan Kumar Saha — a full-stack developer who’s all about building things that work and feel right. Clean code, clear intent, and a good user experience — that’s my happy place.
@@ -45,8 +45,8 @@ const AboutMe = () => {
                         </Button>
                     </div>
                 </div>
-                <div className="flex justify-center items-center">
-                    <div className="border-4 border-primary w-[300px] h-[300px] rounded-full overflow-hidden">
+                <div className="flex-1/2 flex justify-center items-center">
+                    <div className="border-4 border-primary w-[200px] h-[200px] md:w-[230px] md:h-[230px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden">
                         <img src='images/dp.png' className="w-full h-full object-cover" />
                     </div>
                 </div>
