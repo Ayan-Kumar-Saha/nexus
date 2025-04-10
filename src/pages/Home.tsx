@@ -16,11 +16,11 @@ const Home: FunctionComponent = () => {
             <section className="relative rounded-xl overflow-hidden">
                 <div className="relative z-10 py-8 md:py-16 px-4">
                     <div className="mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
                             <HeroSection />
 
-                            <div className="hidden sm:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
+                            <div className="hidden md:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
                                 <CodeSnippet />
                             </div>
                         </div>
