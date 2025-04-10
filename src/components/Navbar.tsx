@@ -62,17 +62,19 @@ const Navbar: FunctionComponent = () => {
                         <div className="md:hidden py-3">
                             <ul className="flex flex-col space-y-2">
                                 {
-                                    NAV_LINKS.map((link: INavLink) => (
-                                        <Link
-                                            key={link.name}
-                                            to={link.path}
-                                            className={`block py-2 hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'
-                                                }`}
-                                            onClick={() => setIsMenuOpen(false)}
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    ))
+                                    NAV_LINKS
+                                        .filter((link: INavLink) => link.isActive)
+                                        .map((link: INavLink) => (
+                                            <Link
+                                                key={link.name}
+                                                to={link.path}
+                                                className={`block py-2 hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'
+                                                    }`}
+                                                onClick={() => setIsMenuOpen(false)}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))
                                 }
                             </ul>
                         </div>
