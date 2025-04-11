@@ -3,6 +3,7 @@ import { IProject } from "../interfaces/project";
 import { Code, ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 interface IProjectCardProps {
     project: IProject
@@ -12,8 +13,12 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
 
+    const handleCardClick = () => {
+        toast.info("Project details will be available soon")
+    }
+
     return (
-        <Card className="overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
+        <Card onClick={handleCardClick} className="overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
             <div className="h-48 bg-muted overflow-hidden">
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>
