@@ -12,36 +12,37 @@ import { CONTACT_PAGE_META } from "@/constants/page-meta";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
+import { SubmitHandler, useForm } from "react-hook-form";
+import { IContactFormData } from "@/interfaces/contact-form-data";
 
 const Contact: FunctionComponent = () => {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-    })
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<IContactFormData>()
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [captchaToken, setCaptchaToken] = useState("");
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+    const onError = () => {
+        const firstError = Object.values(errors)[0];
+        if (firstError && firstError?.message) {
+            toast.error(firstError.message)
+        }
     }
 
-    const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+
+    const onFormSubmit: SubmitHandler<IContactFormData> = (data: IContactFormData) => {
         setIsSubmitting(true);
 
-        emailjs.sendForm(
+        emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            e.currentTarget,
+            data as unknown as Record<string, unknown>,
             { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
         ).then(() => {
             toast('Message sent!', {
                 description: "Thanks for reaching out. I'll get back to you soon.",
             });
+            reset();
         }).catch(() => {
             toast('Something went wrong!', {
                 description: "Please try again later",
@@ -78,7 +79,7 @@ const Contact: FunctionComponent = () => {
 
                 <div className="lg:col-span-2">
                     <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-                    <form className="space-y-6" onSubmit={onFormSubmit}>
+                    <form className="space-y-6" onSubmit={handleSubmit(onFormSubmit, onError)}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label htmlFor="name" className="text-sm text-muted-foreground">
@@ -86,11 +87,8 @@ const Contact: FunctionComponent = () => {
                                 </label>
                                 <Input
                                     id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
                                     placeholder="Your name"
+                                    {...register('name', { required: 'Name is required' })}
                                 />
                             </div>
                             <div className="space-y-2">
@@ -99,11 +97,8 @@ const Contact: FunctionComponent = () => {
                                 </label>
                                 <Input
                                     id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
                                     placeholder="Your email"
+                                    {...register('email', { required: true })}
                                 />
                             </div>
                         </div>
@@ -113,11 +108,8 @@ const Contact: FunctionComponent = () => {
                             </label>
                             <Input
                                 id="subject"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
                                 placeholder="Subject of your message"
+                                {...register('subject', { required: true })}
                             />
                         </div>
                         <div className="space-y-2">
@@ -126,12 +118,9 @@ const Contact: FunctionComponent = () => {
                             </label>
                             <Textarea
                                 id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
                                 placeholder="Your message..."
                                 rows={6}
+                                {...register('message', { required: true })}
                             />
                         </div>
                         <ReCAPTCHA
