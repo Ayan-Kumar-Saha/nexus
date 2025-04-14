@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { NAV_LINKS } from "../constants/navlinks";
 import { INavLink } from "../interfaces/navlink";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./theme/ThemeToggle";
 
 const Navbar: FunctionComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +42,12 @@ const Navbar: FunctionComponent = () => {
                                         </li>
                                     ))}
                         </ul>
-                        {/* <ThemeToggle /> */}
+                        <ThemeToggle />
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center space-x-3">
-                        {/* <ThemeToggle /> */}
+                        <ThemeToggle />
                         <button
                             className="text-foreground hover:text-primary p-1"
                             onClick={toggleMenu}
