@@ -1,5 +1,5 @@
-import { ISocialLink } from "../interfaces/social-link";
-import { SOCIAL_LINKS } from "../constants/social-links";
+import { ISocialLink } from "@/interfaces/social-link";
+import { SOCIAL_LINKS } from "@/constants/social-links";
 
 const Footer = () => {
 

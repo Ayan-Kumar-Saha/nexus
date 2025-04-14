@@ -1,7 +1,7 @@
 import { LuSearch } from "react-icons/lu";
-import SectionHeader from "../components/SectionHeader";
-import { PROJECT_LIST } from "../constants/projects";
-import ProjectCard from "../components/ProjectCard";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { PROJECT_LIST } from "@/constants/projects";
+import ProjectCard from "@/components/projects/ProjectCard";
 import { FunctionComponent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PROJECT_PAGE_META } from "@/constants/page-meta";

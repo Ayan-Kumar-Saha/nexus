@@ -1,9 +1,9 @@
 import { FunctionComponent, useState } from "react";
-import ContactCard from "../components/ContactCard";
-import SectionHeader from "../components/SectionHeader";
-import SocialCard from "../components/SocialCard";
-import { CONTACT_METHODS } from "../constants/contacts";
-import { SOCIAL_LINKS } from "../constants/social-links";
+import ContactCard from "@/components/contact/ContactCard";
+import SectionHeader from "@/components/shared/SectionHeader";
+import SocialCard from "@/components/shared/SocialCard";
+import { CONTACT_METHODS } from "@/constants/contacts";
+import { SOCIAL_LINKS } from "@/constants/social-links";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";

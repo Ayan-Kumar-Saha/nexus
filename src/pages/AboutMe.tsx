@@ -1,6 +1,6 @@
-import ExperienceCard from "@/components/ExperienceCard";
-import SectionHeader from "@/components/SectionHeader";
-import SkillCategoryCard from "@/components/SkillCategoryCard";
+import ExperienceCard from "@/components/about-me/ExperienceCard";
+import SectionHeader from "@/components/shared/SectionHeader";
+import SkillCategoryCard from "@/components/about-me/SkillCategoryCard";
 import { Button } from "@/components/ui/button";
 import { CONTACT_METHODS } from "@/constants/contacts";
 import { EXPERIENCES } from "@/constants/experiences";

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ISkillCategory } from "@/interfaces/skill-category";
 import { FunctionComponent } from "react";
 

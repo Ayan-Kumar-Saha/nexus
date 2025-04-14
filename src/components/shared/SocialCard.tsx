@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { ISocialLink } from "../interfaces/social-link";
+import { ISocialLink } from "@/interfaces/social-link";
 
 interface ISocialCardProps {
     method: ISocialLink

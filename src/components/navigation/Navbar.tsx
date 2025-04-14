@@ -1,9 +1,9 @@
 import { FunctionComponent, useState } from "react";
 import { Link, useLocation } from "react-router";
-import { NAV_LINKS } from "../constants/navlinks";
-import { INavLink } from "../interfaces/navlink";
+import { NAV_LINKS } from "@/constants/navlinks";
+import { INavLink } from "@/interfaces/navlink";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "./theme/ThemeToggle";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const Navbar: FunctionComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

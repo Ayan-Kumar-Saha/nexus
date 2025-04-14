@@ -1,8 +1,8 @@
-import CodeSnippet from "@/components/CodeSnippet";
-import FeaturedProjects from "@/components/FeaturedProjects";
-import HeroSection from "@/components/HeroSection";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
+import CodeSnippet from "@/components/home/CodeSnippet";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
+import HeroSection from "@/components/home/HeroSection";
+import Services from "@/components/home/Services";
+import Testimonials from "@/components/home/Testimonials";
 import { Button } from "@/components/ui/button";
 import { CONTACT_METHODS } from "@/constants/contacts";
 import { HOME_PAGE_META } from "@/constants/page-meta";

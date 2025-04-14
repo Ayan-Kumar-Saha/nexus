@@ -2,8 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router"
 import { IProject } from "@/interfaces/project";
 import { PROJECT_LIST } from "@/constants/projects";
-import ProjectCard from "./ProjectCard";
-import SectionHeader from "./SectionHeader";
+import ProjectCard from "@/components/projects/ProjectCard";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 
 const FeaturedProjects = () => {

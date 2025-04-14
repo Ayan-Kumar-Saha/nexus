@@ -1,7 +1,7 @@
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "@/components/home/ServiceCard";
 import { SERVICES } from "@/constants/services";
 import { IService } from "@/interfaces/service";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 
 const Services = () => {
