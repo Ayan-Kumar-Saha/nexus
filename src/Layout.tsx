@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/footer/Footer";
 import { Toaster } from "./components/ui/sonner";
 
 const Layout = () => {

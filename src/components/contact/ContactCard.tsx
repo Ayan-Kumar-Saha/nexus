@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react"
-import { IContactMethod } from "../interfaces/contact-method"
+import { IContactMethod } from "@/interfaces/contact-method"
 
 interface IContactCardProps {
     method: IContactMethod

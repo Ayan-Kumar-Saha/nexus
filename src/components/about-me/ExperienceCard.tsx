@@ -1,9 +1,9 @@
 import { IExperience } from "@/interfaces/experience";
 import { FunctionComponent } from "react";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, ChevronDown } from "lucide-react";
-import ResponsibilitiesDialog from "./ResponsibilitiesDialog";
-import { ScrollArea } from "./ui/scroll-area";
+import ResponsibilitiesDialog from "@/components/about-me/ResponsibilitiesDialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface IExperienceCardProps {
     experience: IExperience

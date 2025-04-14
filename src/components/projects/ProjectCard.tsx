@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
-import { IProject } from "../interfaces/project";
+import { IProject } from "@/interfaces/project";
 import { Code, ExternalLink, Github } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 interface IProjectCardProps {

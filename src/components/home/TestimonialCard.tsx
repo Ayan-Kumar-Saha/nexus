@@ -1,5 +1,5 @@
 import { ITestimonial } from "@/interfaces/testimonial";
-import { Card } from "./ui/card";
+import { Card } from "@/components/ui/card";
 import { FunctionComponent } from "react";
 import { Quote } from "lucide-react";
 

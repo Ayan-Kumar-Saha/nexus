@@ -1,7 +1,7 @@
 import { ITestimonial } from "@/interfaces/testimonial";
 import { TESTIMONIALS } from "@/constants/testimonials";
 import TestimonialCard from "./TestimonialCard";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../shared/SectionHeader";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 import Marquee from "react-fast-marquee";
 import { FunctionComponent } from "react";

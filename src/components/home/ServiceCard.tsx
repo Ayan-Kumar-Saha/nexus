@@ -1,5 +1,5 @@
 import { IService } from "@/interfaces/service";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { FunctionComponent } from "react";
 
 interface IServiceCardProps {
