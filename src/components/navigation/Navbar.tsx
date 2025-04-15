@@ -26,7 +26,7 @@ const Navbar: FunctionComponent = () => {
                         <ul className="flex items-center space-x-6">
                             {
                                 NAV_LINKS
-                                    .filter((link: INavLink) => link.isActive)
+                                    .filter((link: INavLink) => link.isActive && link.showInNav)
                                     .map((link: INavLink) => (
                                         <li key={link.name}>
                                             <Link
@@ -64,7 +64,7 @@ const Navbar: FunctionComponent = () => {
                             <ul className="flex flex-col space-y-2">
                                 {
                                     NAV_LINKS
-                                        .filter((link: INavLink) => link.isActive)
+                                        .filter((link: INavLink) => link.isActive && link.showInNav)
                                         .map((link: INavLink) => (
                                             <Link
                                                 key={link.name}

@@ -5,5 +5,6 @@ export interface INavLink {
     name: string;
     path: string;
     element: FunctionComponent;
-    isActive: boolean
+    isActive: boolean;
+    showInNav: boolean;
 }
