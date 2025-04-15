@@ -10,4 +10,8 @@ export interface IProject {
     demoUrl: string;
     isFeatured: boolean;
     isActive: boolean;
+    isDetailsAvailable: boolean;
+    longDescription: string;
+    features: string[];
+    contributions: string[];
 }

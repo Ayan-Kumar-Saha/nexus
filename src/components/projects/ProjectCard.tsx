@@ -4,17 +4,24 @@ import { Code, ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useNavigate } from "react-router";
+import { resolveSlug } from "@/lib/utils";
 
 interface IProjectCardProps {
     project: IProject
 }
 
 const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
+    const navigate = useNavigate();
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
 
     const handleCardClick = () => {
-        toast.info("Project details will be available soon")
+        if (!project?.isDetailsAvailable) {
+            toast.info("Project details will be available soon")
+        } else {
+            navigate(`/projects/${resolveSlug(project.name)}`)
+        }
     }
 
     return (

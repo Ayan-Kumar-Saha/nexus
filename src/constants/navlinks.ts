@@ -36,7 +36,7 @@ export const NAV_LINKS: INavLink[] = [
     {
         id: 3,
         name: 'Projects',
-        path: '/projects/:slug/:id',
+        path: '/projects/:slug',
         element: ProjectDetailsPage,
         isActive: true,
         showInNav: false
