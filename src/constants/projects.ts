@@ -74,7 +74,7 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: true,
         imagePath: '/images/projects/delta.png',
         isActive: true,
-        isDetailsAvailable: true,
+        isDetailsAvailable: false,
         longDescription: "",
         features: [
 

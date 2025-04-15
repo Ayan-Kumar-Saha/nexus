@@ -11,12 +11,12 @@ import { Link, useParams } from "react-router"
 const ProjectDetails: FunctionComponent = () => {
 
     const { slug } = useParams<{ slug: string }>();
-    const project = PROJECT_LIST.find((p) => resolveSlug(p.name) === slug);
+    const project = PROJECT_LIST.filter(p => p.isDetailsAvailable).find((p) => resolveSlug(p.name) === slug);
 
     if (!project) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[60vh]">
-                <h2 className="text-2xl font-bold mb-4">Project not found</h2>
+                <h2 className="text-2xl font-bold mb-4">Project not found / Project data not yet available</h2>
                 <Button asChild variant="default">
                     <Link to="/projects">
                         <ArrowLeft className="mr-2" size={16} />
