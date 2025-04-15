@@ -16,8 +16,9 @@ export const PROJECT_LIST: IProject[] = [
         isDetailsAvailable: true,
         longDescription: "Nexus is my personal portfolio site that I built to brush up on my React skills after being neck-deep in Angular for way too long. I wanted something clean, simple, and truly me—a place to showcase my projects, tell my story, and quietly scream “I know what I’m doing” without actually saying it. It was a fun way to shake off the Angular hangover and remind myself that JSX/TSX still feels like home.",
         features: [
-            "Built with React as a Single Page Application (SPA) for smooth, fast navigation without page reloads",
-            "Minimalist layout with clean visuals and short, snappy user flow - thanks to TailwindCSS",
+            "Built using React and TailwindCSS",
+            "Single Page Application (SPA) for smooth, fast navigation without page reloads",
+            "Minimalist layout with clean visuals and short, snappy user flow",
             "Responsive design to make it look good on all screens and devices",
             "Too harsh on the eyes? Use dark mode"
         ],
@@ -39,18 +40,20 @@ export const PROJECT_LIST: IProject[] = [
         isDetailsAvailable: true,
         longDescription: "Anuprerna is an ethical textile brand based in Kolkata that bridges traditional East Indian handloom craftsmanship with modern, sustainable fashion. They collaborate with over 300 rural artisans to produce handwoven fabrics and finished products using natural fibers like cotton, khadi, linen, and peace silk. Their mission is to empower artisans, preserve indigenous weaving techniques, and offer eco-friendly textiles to global designers and conscious consumers.",
         features: [
-            "Mobile-First Design – Fully responsive UI built with accessibility and UX best practices.",
-            "SSR, SEO-optimized, fast-loading SPA using lazy loading and code-splitting.",
+            "Built using Angular, Spring Boot, and PostgreSQL",
+            "Mobile-First Design – Fully responsive UI built with accessibility and UX best practices",
+            "SSR, SEO-optimized, fast-loading SPA using lazy loading and code-splitting",
             "300+ scalable REST APIs with secure auth, caching, and optimized DB access",
-            "3,500+ Products Managed – Supports dynamic configuration, variants, weaving styles, and custom measurements.",
-            "500+ Weekly Orders – Robust order management system with workflow-driven processing.",
-            "2,000+ Active Users – Stable user management with role-based access and behavior tracking.",
-            "Custom CMS – Built from scratch to manage products, orders, customers, and production workflows and many more",
-            "Payment Gateway Integration – Secure online payments via major Indian and international gateways.",
-            "Real-time logging and error monitoring across frontend and backend using Sentry",
-            "In-House Analytics – Tracks product views, customer behavior, and conversion funnels without third-party dependencies.",
-            "In-House Service for transactional and marketing email workflows.",
-            "Jenkins + AWS Deployment – CI/CD pipeline with automated tests and environment-based rollouts."
+            "3,500+ Products Managed – Supports dynamic configuration with fabric, colors, finishes, and custom measurements",
+            "500+ Weekly Orders – Robust order management system with workflow-driven processing",
+            "2,000+ Active Users – Stable user management with behavior tracking.",
+            "Custom CMS – Built from scratch to manage products, orders, customers, production workflows and many more",
+            "Zoho Integration – Seamlessly connected with Zoho for inventory, sales orders, invoicing, and stock synchronization",
+            "Razorpay Integration – Secure online payments via major Indian and international gateways",
+            "Sentry Integration - Real-time logging and error monitoring across frontend and backend",
+            "Bloomsight Analytics Integration - Tracks product views, customer behavior, and conversion funnels without third-party dependencies",
+            "Bloomsight Email Integration - In-House Service for transactional and marketing email workflows",
+            "Jenkins + AWS Deployment – CI/CD pipeline with environment-based rollouts"
         ],
         contributions: [
             "Led a team of 4 members, overseeing project execution and collaboration.",
@@ -58,7 +61,7 @@ export const PROJECT_LIST: IProject[] = [
             "Managed 50% of the custom CMS development, ensuring scalability and smooth operations.",
             "Contributed 25% to the user facing frontend development, ensuring seamless UI/UX integration.",
             "Conducted code reviews, optimized performance, and ensured high-quality standards.",
-            "Led research and development efforts and handled third-party service integrations (e.g., payment gateways).",
+            "Led research and development efforts and handled third-party service integrations (e.g., Razorpay, Zoho etc).",
             "Managed project timelines, communicated with clients, and ensured on-time delivery."
         ]
     },
@@ -74,12 +77,21 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: true,
         imagePath: '/images/projects/delta.png',
         isActive: true,
-        isDetailsAvailable: false,
-        longDescription: "",
+        isDetailsAvailable: true,
+        longDescription: "Delta Faucet Company, a subsidiary of Masco Corporation, is known for combining style and innovation to create transformative experiences with water. The Indian website, deltafaucet.in, showcases a curated portfolio of premium kitchen and bathroom solutions tailored for Indian homes. Featuring cutting-edge technologies like H₂Okinetic®, ShieldSpray®, and Lumicoat™, the site offers a detailed view into Delta’s product lines, design inspirations, and technology-driven features. With a strong emphasis on performance, visual appeal, and brand storytelling, the platform serves as a digital touchpoint for homeowners, architects, and designers.",
         features: [
-
+            "Built using Angular, Spring Boot, and PostgreSQL",
+            "Server-side rendering (SSR) for SEO and faster load times",
+            "Advanced filtering and search with responsive UI",
+            "Custom built CMS integration for dynamic content and product management",
+            "Custom CMS Integration – Enabled dynamic product management",
+            "CI/CD pipeline with Jenkins, deployed to AWS"
         ],
         contributions: [
+            "Worked as an independant contributor to develop multiple modules across frontend, CMS and backend",
+            "Debugged and optimized critical workflows, fixed good number of bugs",
+            "Provided active maintenance and production support",
+            "Ensured performance, security, and SEO best practices were followed"
         ]
     },
     {

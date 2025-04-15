@@ -33,7 +33,7 @@ const ProjectDetails: FunctionComponent = () => {
             <div className="flex flex-col md:flex-row gap-8 mb-8">
                 {
                     project.imagePath && (
-                        <div className="w-full md:w-2/5 rounded-lg overflow-hidden border border-border">
+                        <div className="w-full md:w-3/6 rounded-lg overflow-hidden border border-border">
                             <img
                                 src={project.imagePath}
                                 alt={project.name}
