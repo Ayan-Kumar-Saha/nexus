@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
-import Layout from './Layout'
-import { NAV_LINKS } from './constants/navlinks'
+import Layout from '@/Layout'
+import { NAV_LINKS } from '@/constants/navlinks'
 import { Suspense } from 'react'
-import Loading from './components/shared/Loading'
-import NotFound from './pages/NotFound'
-import ThemeProvider from './components/theme/ThemeProvider'
+import Loading from '@/components/shared/Loading'
+import NotFound from '@/pages/NotFound'
+import ThemeProvider from '@/components/theme/ThemeProvider'
 
 
 function App() {

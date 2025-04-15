@@ -4,21 +4,28 @@ import { Code, ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useNavigate } from "react-router";
+import { resolveSlug } from "@/lib/utils";
 
 interface IProjectCardProps {
     project: IProject
 }
 
 const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
+    const navigate = useNavigate();
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
 
     const handleCardClick = () => {
-        toast.info("Project details will be available soon")
+        if (!project?.isDetailsAvailable) {
+            toast.info("Project details will be available soon")
+        } else {
+            navigate(`/projects/${resolveSlug(project.name)}`)
+        }
     }
 
     return (
-        <Card onClick={handleCardClick} className="overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
+        <Card onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
             <div className="h-48 bg-muted overflow-hidden">
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>
