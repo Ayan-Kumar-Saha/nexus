@@ -25,7 +25,7 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
     }
 
     return (
-        <Card onClick={handleCardClick} className="overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md">
+        <Card onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
             <div className="h-48 bg-muted overflow-hidden">
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>
