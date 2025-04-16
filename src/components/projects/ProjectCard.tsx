@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { resolveSlug } from "@/lib/utils";
+import { motion, Variants } from "framer-motion";
 
 interface IProjectCardProps {
-    project: IProject
+    project: IProject,
+    variants: Variants
 }
 
-const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
+const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project, variants }) => {
     const navigate = useNavigate();
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
@@ -24,8 +26,10 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
         }
     }
 
+    const MotionCard = motion.create(Card);
+
     return (
-        <Card onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+        <MotionCard variants={variants} onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
             <div className="h-48 bg-muted overflow-hidden">
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>
@@ -63,7 +67,7 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
                     }
                 </div>
             </CardContent>
-        </Card>
+        </MotionCard>
     );
 }
 
