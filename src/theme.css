@@ -197,4 +197,26 @@
     .card-hover {
         @apply transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] hover:shadow-md sm:hover:shadow-lg;
     }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        /* from :root or .dark */
+        border-radius: 10px;
+        border: 1px solid transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-primary);
+        /* fallback to default if dark not set */
+    }
+
 }

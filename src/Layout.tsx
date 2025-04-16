@@ -2,10 +2,11 @@ import { Outlet } from "react-router";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/footer/Footer";
 import { Toaster } from "./components/ui/sonner";
+import { ReactLenis } from 'lenis/react'
 
 const Layout = () => {
     return (
-        <>
+        <ReactLenis root options={{ smoothWheel: true }}>
             <div className="min-h-screen flex flex-col bg-background">
                 <Navbar />
                 <main className="flex-grow">
@@ -16,8 +17,7 @@ const Layout = () => {
                 <Footer />
             </div>
             <Toaster />
-        </>
-
+        </ReactLenis>
     )
 }
 
