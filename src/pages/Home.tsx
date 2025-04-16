@@ -6,6 +6,7 @@ import Testimonials from "@/components/home/Testimonials";
 import { Button } from "@/components/ui/button";
 import { CONTACT_METHODS } from "@/constants/contacts";
 import { HOME_PAGE_META } from "@/constants/page-meta";
+import { motion } from "framer-motion";
 import { BriefcaseBusiness, Coffee, ExternalLink } from "lucide-react";
 import { FunctionComponent } from "react";
 import { Link } from 'react-router'
@@ -20,9 +21,13 @@ const Home: FunctionComponent = () => {
 
                             <HeroSection />
 
-                            <div className="hidden md:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="hidden md:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
                                 <CodeSnippet />
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

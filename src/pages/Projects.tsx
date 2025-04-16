@@ -5,6 +5,17 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import { FunctionComponent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PROJECT_PAGE_META } from "@/constants/page-meta";
+import { motion } from "framer-motion";
+
+const containerVariant = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.2, }, }
+}
+
+const cardVariant = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+};
 
 const Projects: FunctionComponent = () => {
     const activeProjects = PROJECT_LIST.filter(proj => proj.isActive);
@@ -63,11 +74,19 @@ const Projects: FunctionComponent = () => {
             {
                 filteredProjects.length > 0
                     ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                            {filteredProjects.map((project) => (
-                                <ProjectCard key={project.id} project={project} />
-                            ))}
-                        </div>
+                        <motion.div
+                            variants={containerVariant}
+                            initial="hidden"
+                            animate="show"
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                            {
+                                filteredProjects.map((project) => (
+                                    <motion.div key={project.id} variants={cardVariant}>
+                                        <ProjectCard project={project} />
+                                    </motion.div>
+                                ))
+                            }
+                        </motion.div>
                     ) : (
                         <div className="text-center py-10">
                             <p className="text-muted-foreground">No projects found matching your criteria.</p>

@@ -9,12 +9,38 @@ import { SKILL_CATEGORIES } from "@/constants/skill-categories";
 import { ISkillCategory } from "@/interfaces/skill-category";
 import { Coffee, Download } from "lucide-react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { y: 10, opacity: 0 },
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.4
+        }
+    }
+};
 
 const AboutMe = () => {
     return (
         <>
             <SectionHeader title={ABOUT_PAGE_META.title} description={ABOUT_PAGE_META.description} />
-            <div className="flex flex-col-reverse md:flex-row gap-6">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col-reverse md:flex-row gap-6">
                 <div className="flex-1/2">
                     <div className="my-3 text-sm md:text-base">
                         <p className="text-justify">
@@ -50,16 +76,25 @@ const AboutMe = () => {
                         <img src='images/dp.png' className="w-full h-full object-cover" />
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <section className="mt-16">
                 <SectionHeader title={ABOUT_PAGE_META.skill_header} />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
+
                         SKILL_CATEGORIES.map(
-                            (category: ISkillCategory) => <SkillCategoryCard key={category.category} category={category} />)
+                            (category: ISkillCategory) => (
+                                <motion.div key={category.category} variants={itemVariants}>
+                                    <SkillCategoryCard category={category} />
+                                </motion.div>
+                            ))
                     }
-                </div>
+                </motion.div>
             </section>
 
             <section className="mt-16">

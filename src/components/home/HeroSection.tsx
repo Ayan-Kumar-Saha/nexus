@@ -4,10 +4,15 @@ import { ArrowRight, CloudDownload } from "lucide-react";
 import { ISocialLink } from "@/interfaces/social-link";
 import { SOCIAL_LINKS } from "@/constants/social-links";
 import TypewriterBuilder from "@/components/home/TypewriterBuilder";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
     return (
-        <div className="space-y-6">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6">
             <div className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
                 <span>Available for new positions</span>
             </div>
@@ -62,7 +67,7 @@ const HeroSection = () => {
                         ))
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 
