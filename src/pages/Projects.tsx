@@ -81,9 +81,7 @@ const Projects: FunctionComponent = () => {
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                             {
                                 filteredProjects.map((project) => (
-                                    <motion.div key={project.id} variants={cardVariant}>
-                                        <ProjectCard project={project} />
-                                    </motion.div>
+                                    <ProjectCard key={project.id} variants={cardVariant} project={project} />
                                 ))
                             }
                         </motion.div>

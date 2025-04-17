@@ -2,6 +2,15 @@ import { ITestimonial } from "@/interfaces/testimonial";
 
 export const TESTIMONIALS: ITestimonial[] = [
     {
+        id: 6,
+        author: "Amit Singha",
+        designation: "Founder",
+        organization: "Anuprerna",
+        profileImage: "images/testimonials/amit_singha.jpeg",
+        quote: "I had the pleasure of working with Ayan Kumar Saha during his time at Bloomscorp, where he played a key role in building Anuprerna’s website and backend platform. Ayan brought a high level of dedication, responsibility, and professionalism to his work. He approached every task with care and commitment, often going the extra mile to ensure that the systems were robust, efficient, and aligned with our goals. His technical skills, paired with a strong sense of accountability, made him a reliable team member throughout the project. I wish Ayan all the very best in his future career and have no doubt he’ll continue to do great work wherever he goes.",
+        isActive: true
+    },
+    {
         id: 1,
         author: "Sourav Ganguly",
         designation: "Senior Project Manager",
