@@ -6,14 +6,18 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { resolveSlug } from "@/lib/utils";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface IProjectCardProps {
-    project: IProject,
-    variants: Variants
+    project: IProject
 }
 
-const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project, variants }) => {
+const cardVariant = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+};
+
+const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
     const navigate = useNavigate();
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
@@ -29,7 +33,7 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project, variants }
     const MotionCard = motion.create(Card);
 
     return (
-        <MotionCard variants={variants} onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+        <MotionCard variants={cardVariant} onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
             <div className="h-48 bg-muted overflow-hidden">
                 <img src={imagePath} alt={name} className="w-full h-full object-cover" />
             </div>

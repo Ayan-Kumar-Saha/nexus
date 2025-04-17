@@ -4,7 +4,7 @@ import { NAV_LINKS } from "@/constants/navlinks";
 import { INavLink } from "@/interfaces/navlink";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/theme/ThemeToggle";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar: FunctionComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
