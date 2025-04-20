@@ -3,6 +3,7 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/footer/Footer";
 import { Toaster } from "./components/ui/sonner";
 import { ReactLenis } from 'lenis/react'
+import ScrollHandler from "@/components/shared/ScrollHandler";
 
 const Layout = () => {
     return (
@@ -17,6 +18,7 @@ const Layout = () => {
                 <Footer />
             </div>
             <Toaster />
+            <ScrollHandler />
         </ReactLenis>
     )
 }

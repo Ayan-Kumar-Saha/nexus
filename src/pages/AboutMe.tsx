@@ -78,7 +78,7 @@ const AboutMe = () => {
                 </div>
             </motion.div>
 
-            <section className="mt-16">
+            <section className="mt-16 scroll-offset" id="skills">
                 <SectionHeader title={ABOUT_PAGE_META.skill_header} />
                 <motion.div
                     variants={containerVariants}
