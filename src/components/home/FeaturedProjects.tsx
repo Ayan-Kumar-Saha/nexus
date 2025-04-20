@@ -22,7 +22,7 @@ const FeaturedProjects = () => {
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-10">
                 <span></span>
-                <Link to="/projects" className="inline-flex items-center text-primary mt-4 md:mt-0 hover:underline">
+                <Link to="/projects" className="inline-flex justify-center items-center text-primary mt-4 md:mt-0 hover:underline">
                     View all projects <ArrowRight size={16} className="ml-1" />
                 </Link>
             </div>
