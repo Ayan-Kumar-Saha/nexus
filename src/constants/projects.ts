@@ -60,7 +60,7 @@ export const PROJECT_LIST: IProject[] = [
             "Fully responsible for backend architecture, API development, and database design.",
             "Managed 50% of the custom CMS development, ensuring scalability and smooth operations.",
             "Contributed 25% to the user facing frontend development, ensuring seamless UI/UX integration.",
-             "A key contributor to ArtisanFlow, their proprietary tech solution that brings complete transparency and real-time visibility to the artisanal supply chain",
+            "A key contributor to ArtisanFlow, their proprietary tech solution that brings complete transparency and real-time visibility to the artisanal supply chain",
             "Conducted code reviews, optimized performance, and ensured high-quality standards.",
             "Led research and development efforts and handled third-party service integrations (e.g., Razorpay, Zoho etc).",
             "Managed project timelines, communicated with clients, and ensured on-time delivery."
@@ -107,11 +107,23 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: false,
         imagePath: '/images/projects/bloomsight.png',
         isActive: true,
-        isDetailsAvailable: false,
-        longDescription: "",
+        isDetailsAvailable: true,
+        longDescription: "Bloomsight is a comprehensive web analytics and marketing platform designed to provide businesses with real-time insights into user behavior and campaign performance. It offers a suite of tools that enable detailed tracking, reporting, and integration capabilities to optimize digital strategies.​",
         features: [
+            "Real-time website analytics and user behavior tracking",
+            "Custom event tracking (e.g., clicks, form submissions)",
+            'Email campaign creation, management, and tracking',
+            'URL shortening with click tracking',
+            'Customizable reports and visualizations',
+            'Centralized marketing dashboard'
         ],
         contributions: [
+            "Developed the client-side dashboard using React and Tailwind CSS",
+            "Built reusable UI components and ensured responsive layout",
+            "Implemented real-time data rendering and visualizations",
+            "Created the core JavaScript tracking library: bloomsight.js",
+            "bloomsight.js handles event tracking, payload structuring, and backend communication",
+            "Ensured cross-browser compatibility and performance optimization in the tracking script"
         ]
     },
     {
