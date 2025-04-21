@@ -60,6 +60,7 @@ export const PROJECT_LIST: IProject[] = [
             "Fully responsible for backend architecture, API development, and database design.",
             "Managed 50% of the custom CMS development, ensuring scalability and smooth operations.",
             "Contributed 25% to the user facing frontend development, ensuring seamless UI/UX integration.",
+             "A key contributor to ArtisanFlow, their proprietary tech solution that brings complete transparency and real-time visibility to the artisanal supply chain",
             "Conducted code reviews, optimized performance, and ensured high-quality standards.",
             "Led research and development efforts and handled third-party service integrations (e.g., Razorpay, Zoho etc).",
             "Managed project timelines, communicated with clients, and ensured on-time delivery."
