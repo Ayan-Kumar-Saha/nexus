@@ -211,13 +211,30 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: false,
         imagePath: '/images/projects/tapioca-growth.png',
         isActive: true,
-        isDetailsAvailable: false,
-        longDescription: "",
+        isDetailsAvailable: true,
+        longDescription: "A multi-platform field and supply chain management app built for a Fortune 500 agribusiness, aimed at digitizing and optimizing the end-to-end lifecycle of tapioca farming and processing in Thailand. It served 2,500+ farmers across rural areas and supported both English and Thai languages.",
         features: [
-
+            "Farmer Registration Module with geotagging and identity validation.",
+            "Farm and Plantation tracking with detailed crop cycle and sustainability data.",
+            "Offer and Booking System for managing delivery and pickup schedules.",
+            "Stem Supply Management for efficient planting material distribution.",
+            "Dual-language support with dynamic switching between English and Thai.",
+            "Cross-platform support via Apache Cordova for Android, iOS, and Web.",
+            "Offline-first architecture for reliable operation in low-connectivity rural areas.",
+            "Dashboard and reporting tools for real-time insights into farming and logistics operations.",
+            "Recognition as the best app across 120 countries and 60 sectors for impact and innovation."
         ],
         contributions: [
+            "Led full-cycle development of a multi-platform app using Angular, Apache Cordova, Azure Functions, and MongoDB.",
+            "Architected and implemented offline-first capability for consistent performance in rural zones with poor connectivity.",
+            "Built and maintained critical modules including Registration, Farm & Plantation, Offer, Booking, and Stem Supply.",
+            "Integrated dynamic language switching with complete English and Thai localization.",
+            "Designed a responsive and intuitive UI/UX for seamless farmer onboarding and daily use.",
+            "Optimized backend functions using Azure Functions for scalable and cost-efficient processing.",
+            "Collaborated with stakeholders to drive adoption among 2,500+ farmers and refine modules based on on-ground feedback.",
+            "Contributed to the app's recognition as the best solution in its category across 120 countries and 60 sectors."
         ]
+
     },
     {
         id: 8,
