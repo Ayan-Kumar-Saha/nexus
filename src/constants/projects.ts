@@ -226,14 +226,15 @@ export const PROJECT_LIST: IProject[] = [
         ],
         contributions: [
             "Led full-cycle development of a multi-platform app using Angular, Apache Cordova, Azure Functions, and MongoDB.",
-            "Architected and implemented offline-first capability for consistent performance in rural zones with poor connectivity.",
+            "Led a team of 12 developers over a span of 1.5 years, guiding architecture, implementation, and delivery.",
+            "Owned critical aspects from database design to CI/CD deployment pipelines, contributing heavily to every technical layer.",
             "Built and maintained critical modules including Registration, Farm & Plantation, Offer, Booking, and Stem Supply.",
             "Integrated dynamic language switching with complete English and Thai localization.",
             "Designed a responsive and intuitive UI/UX for seamless farmer onboarding and daily use.",
             "Optimized backend functions using Azure Functions for scalable and cost-efficient processing.",
             "Collaborated with stakeholders to drive adoption among 2,500+ farmers and refine modules based on on-ground feedback.",
             "Contributed to the app's recognition as the best solution in its category across 120 countries and 60 sectors."
-        ]
+        ] 
 
     },
     {
