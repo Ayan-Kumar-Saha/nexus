@@ -178,8 +178,8 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: false,
         imagePath: '/images/projects/containova.png',
         isActive: true,
-        isDetailsAvailable: false,
-        longDescription: "",
+        isDetailsAvailable: true,
+        longDescription: "Containova is an intelligent container yard management system built to optimize logistics operations in container yards. It streamlines container movement, improves space utilization, and automates traditionally manual processes using AI and modern web technologies.",
         features: [
 
         ],
