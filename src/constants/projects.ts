@@ -181,9 +181,22 @@ export const PROJECT_LIST: IProject[] = [
         isDetailsAvailable: true,
         longDescription: "Containova is an intelligent container yard management system built to optimize logistics operations in container yards. It streamlines container movement, improves space utilization, and automates traditionally manual processes using AI and modern web technologies.",
         features: [
-
+            "Container Check-In/Check-Out System: Digitally tracks incoming and outgoing containers with minimal human input.",
+            "Yard Occupancy Planning: Visual representation of yard layout with live updates on container positions.",
+            "AI-Powered Placement Optimization: Automatically suggests the best slot for incoming containers based on usage patterns and yard constraints.",
+            "Automated Position Detection: Uses image processing to detect and confirm container and machinery positions in real time.",
+            "Task Management Module: Assigns, tracks, and audits tasks for yard personnel and logistics staff.",
+            "Cross - Platform Frontend: Combines Angular and React for admin and operations views, tailored for different user roles.",
+            "Serverless Architecture: Leveraged Azure Functions for backend operations, enabling scalability and lower cost.",
+            "MongoDB Backend: Schemaless flexibility to handle varied container data and activity logs."
         ],
         contributions: [
+            "Led Development and Maintenance: Oversaw full lifecycle of the application—from architecture to deployment—while mentoring a team of frontend and backend developers.",
+            "Frontend Engineering: Built and maintained modular UIs using Angular and React, optimized for real-time updates and usability in rough environments (e.g., tablets used on container yards).",
+            "AI & Optimization Logic: Integrated AI models within a app for container placement suggestions and automated position validation using Flutter",
+            "Azure Serverless Integration: Designed and implemented APIs using Azure Functions, ensuring fast and scalable backend communication.",
+            "Database Modeling: Structured MongoDB collections for flexible yet performant querying of yard layouts, container statuses, and personnel tasks.",
+            "DevOps & Monitoring: Implemented CI/CD pipelines, logging, and health checks for seamless deployment and monitoring."
         ]
     },
     {
