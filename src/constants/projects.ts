@@ -159,11 +159,26 @@ export const PROJECT_LIST: IProject[] = [
         imagePath: '/images/projects/ngx-gtag.png',
         isActive: true,
         isDetailsAvailable: true,
-        longDescription: "",
+        longDescription: "A lightweight and configurable Angular wrapper for Google Analytics 4 (GA4), designed to simplify event tracking and page view logging in Angular applications without directly relying on the global gtag object everywhere.",
         features: [
-
+            "Plug-and-play GA4 integration for Angular apps.",
+            "Supports automatic and manual page view tracking.",
+            "Simple API to log custom events with categories, actions, and labels.",
+            "Environment-based enable/disable mechanism for development and production.",
+            "Support for multiple tracking IDs (useful for multi-tenant or multi-brand apps).",
+            "Service-based abstraction to avoid direct use of `gtag` in components.",
+            "Tree-shakable and compatible with Angular's dependency injection.",
+            "Detailed developer documentation and usage examples available on npm."
         ],
         contributions: [
+            "Ideated, architected, and built the entire library from scratch with best practices in Angular packaging and TypeScript.",
+            "Designed a flexible API allowing developers to integrate GA4 tracking in minutes with minimal setup.",
+            "Implemented core services to abstract Google Analytics logic away from Angular components.",
+            "Handled multiple tracking ID support to accommodate enterprise-grade multi-tenant needs.",
+            "Ensured compatibility with Angular's DI and build systems for maximum performance and maintainability.",
+            "Published and maintain the library on npm under the Bloomscorp scope, with regular updates and support.",
+            "Wrote comprehensive documentation with usage guides, installation steps, and common troubleshooting tips.",
+            "Used in production across Bloomscorp projects to track user interactions and business-critical metrics."
         ]
     },
     {
@@ -234,7 +249,7 @@ export const PROJECT_LIST: IProject[] = [
             "Optimized backend functions using Azure Functions for scalable and cost-efficient processing.",
             "Collaborated with stakeholders to drive adoption among 2,500+ farmers and refine modules based on on-ground feedback.",
             "Contributed to the app's recognition as the best solution in its category across 120 countries and 60 sectors."
-        ] 
+        ]
 
     },
     {
