@@ -312,7 +312,7 @@ export const PROJECT_LIST: IProject[] = [
         id: 10,
         name: 'AMS Method DB',
         description: 'An app for storing and managing food processing recipes',
-        tags: ['Web', 'Angular', 'MongoDB', 'Nodejs'],
+        tags: ['Web', 'Angular', 'MongoDB', 'Nodejs', 'Azure Functions'],
         isCodeAvailable: false,
         codebaseUrl: '',
         isDemoAvailable: false,
