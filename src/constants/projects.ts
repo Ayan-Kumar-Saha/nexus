@@ -139,7 +139,7 @@ export const PROJECT_LIST: IProject[] = [
         imagePath: '/images/projects/scio.png',
         isActive: true,
         isDetailsAvailable: false,
-        longDescription: "",
+        longDescription: "A real-time, push notification-based mobile and web application developed for a NAAC-accredited Government College. Built to serve as the official communication channel, the app reliably connects students, parents, and faculty with college updates and bulletins.",
         features: [
 
         ],
