@@ -152,6 +152,14 @@ export const PROJECT_LIST: IProject[] = [
             "Secure login and role-based access for both admins and app users."
         ],
         contributions: [
+            "Led development of the entire mobile application using Dart/Flutter for both Android and iOS platforms.",
+            "Built and maintained a Spring Boot backend with PostgreSQL, ensuring efficient data flow and integrity.",
+            "Developed the React-based CMS for admins to manage users and broadcast notifications.",
+            "Integrated Firebase Cloud Messaging (FCM) to ensure reliable and instant delivery of push notifications.",
+            "Architected the app for performance and scalability, handling 3000+ daily active users with minimal latency.",
+            "Implemented secure user onboarding for students, faculty, and parents with role-based access control.",
+            "Collaborated directly with college stakeholders to ensure compliance with academic communication requirements.",
+            "Optimized the backend for near-zero data loss even during peak load."
         ]
     },
     {
