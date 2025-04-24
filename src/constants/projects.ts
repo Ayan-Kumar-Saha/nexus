@@ -320,8 +320,8 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: false,
         imagePath: '/images/placeholder.svg',
         isActive: true,
-        isDetailsAvailable: false,
-        longDescription: "",
+        isDetailsAvailable: true,
+        longDescription: "An internal web application built for a Fortune 500 food processing giant to manage the lifecycle of thousands of recipes globally—ensuring consistency, compliance, and real-time collaboration across teams.",
         features: [
 
         ],
