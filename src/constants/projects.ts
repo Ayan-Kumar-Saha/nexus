@@ -323,7 +323,14 @@ export const PROJECT_LIST: IProject[] = [
         isDetailsAvailable: true,
         longDescription: "An internal web application built for a Fortune 500 food processing giant to manage the lifecycle of thousands of recipes globally—ensuring consistency, compliance, and real-time collaboration across teams.",
         features: [
-
+            "Built using Angular for frontend, Azure Functions for backend, and MongoDB for data storage.",
+            "Supports recipe creation, editing, and publishing with strict version control.",
+            "Implements a review and approval workflow to prevent premature or unauthorized updates.",
+            "Role-based access control to manage permissions for creators, reviewers, and approvers.",
+            "Real-time validation and status indicators to streamline global recipe updates.",
+            "Ensures only the latest approved recipes are accessible by end preparers.",
+            "Optimized for high availability and performance under global usage scenarios.",
+            "Audit trails and history logs for complete traceability of changes."
         ],
         contributions: [
         ]
