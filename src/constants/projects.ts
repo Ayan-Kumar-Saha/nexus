@@ -141,7 +141,15 @@ export const PROJECT_LIST: IProject[] = [
         isDetailsAvailable: false,
         longDescription: "A real-time, push notification-based mobile and web application developed for a NAAC-accredited Government College. Built to serve as the official communication channel, the app reliably connects students, parents, and faculty with college updates and bulletins.",
         features: [
-
+            "Push notification-based communication using Firebase Cloud Messaging (FCM).",
+            "Built using Dart/Flutter for a seamless Android and iOS experience.",
+            "Robust backend with Spring Boot and PostgreSQL ensuring data consistency and reliability.",
+            "Admin-facing CMS built in React to manage users and push communications.",
+            "Support for onboarding and managing different user roles: students, parents, and faculty.",
+            "Real-time delivery of announcements, bulletins, and alerts with negligible latency.",
+            "Used daily by 3000+ users with 0 data loss incidents.",
+            "Multi-language ready architecture with scalable user management.",
+            "Secure login and role-based access for both admins and app users."
         ],
         contributions: [
         ]
