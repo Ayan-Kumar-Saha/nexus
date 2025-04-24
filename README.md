@@ -3,14 +3,11 @@
 This is my developer portfolio built to make an online presence
 
 ### 🚀 Features
-- Built with **React**
+- Built with **React** and **Tailwind**
 - Responsive design
 - Clean, minimal UI
 
 ### 🛠️ Planned Improvements
-- Dark mode
-- Smooth animations
-- Project Details Page
 - SEO improvement
 
 ### 🌐 Live Demo
