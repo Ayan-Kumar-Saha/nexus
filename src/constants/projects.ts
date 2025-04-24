@@ -333,6 +333,13 @@ export const PROJECT_LIST: IProject[] = [
             "Audit trails and history logs for complete traceability of changes."
         ],
         contributions: [
+            "Designed and developed the complete application architecture using Angular, Azure Functions, and MongoDB.",
+            "Implemented version control and approval mechanisms to ensure recipe integrity and regulatory compliance.",
+            "Built modular, reusable Angular components to handle dynamic forms and complex data models.",
+            "Collaborated with cross-functional teams to gather requirements and align with operational workflows.",
+            "Optimized backend APIs for fast retrieval and storage of large recipe datasets.",
+            "Ensured security best practices with scoped access based on user roles and responsibilities.",
+            "Played a critical role in deploying and maintaining the app across multiple regions."
         ]
     }
 ]
