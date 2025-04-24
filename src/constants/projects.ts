@@ -130,7 +130,7 @@ export const PROJECT_LIST: IProject[] = [
         id: 4,
         name: 'Scio (RPMC)',
         description: 'A push-notification-based communication app for a NAAC-accredited government college',
-        tags: ['Android', 'Web', 'Flutter', 'React', 'Typescript'],
+        tags: ['Android', 'Web', 'Flutter', 'React', 'Typescript', 'Firebase'],
         isCodeAvailable: false,
         codebaseUrl: '',
         isDemoAvailable: true,
@@ -138,7 +138,7 @@ export const PROJECT_LIST: IProject[] = [
         isFeatured: false,
         imagePath: '/images/projects/scio.png',
         isActive: true,
-        isDetailsAvailable: false,
+        isDetailsAvailable: true,
         longDescription: "A real-time, push notification-based mobile and web application developed for a NAAC-accredited Government College. Built to serve as the official communication channel, the app reliably connects students, parents, and faculty with college updates and bulletins.",
         features: [
             "Push notification-based communication using Firebase Cloud Messaging (FCM).",
