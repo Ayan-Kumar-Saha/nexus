@@ -8,14 +8,32 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 1,
                 role: 'Senior Engineer I',
-                from: 2023,
-                to: 2023,
+                from: 2024,
+                to: 2025,
                 isActive: true,
                 responsibilities: [
                     'Contributed to the design and development of Bloomsight, a sophisticated web analytics tool, which ultimately yields an accuracy of 80% when compared to Google Analytics (in specific metrics).',
                     'Accomplished the migration and unification of two B2B e-commerce websites by building a single, scalable platform using Angular, Spring Boot, and PostgreSQL, eliminating reliance on WordPress and enabling advanced product customization.',
                     'Accomplished a 95% reduction in deployment time by developing multiple CI/CD pipelines using Azure Pipelines, decreasing the build and deployment process from 3-5 days to 10-15 minutes, which improved efficiency and eliminated manual intervention across 10 projects.',
                     'Built internal tools and libraries that improved delivery speed and quality by 20%, leading to a boost in customer retention.'
+                ]
+            },
+        ]
+    },
+    {
+        id: 3,
+        company: 'Nature Technologies Pvt. Ltd.',
+        positions: [
+            {
+                id: 1,
+                role: 'Full Stack Developer',
+                from: 2023,
+                to: 2024,
+                isActive: false,
+                responsibilities: [
+                    'Contributed to the development of the in-house Chatware product by implementing typing indicators and online/offline presence using heartbeat pings and user state management, enhancing user engagement and delivering a dynamic real-time experience.',
+                    'Built an angular library for Google Tag Manager integration which works with Angular SSR',
+                    'Mentored 5 junior developers through hands-on code reviews, pair programming, and structured knowledge-sharing sessions.'
                 ]
             },
         ]
