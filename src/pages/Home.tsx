@@ -4,10 +4,9 @@ import HeroSection from "@/components/home/HeroSection";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
 import { Button } from "@/components/ui/button";
-import { CONTACT_METHODS } from "@/constants/contacts";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 import { motion } from "framer-motion";
-import { BriefcaseBusiness, Coffee, ExternalLink } from "lucide-react";
+import { BriefcaseBusiness, Calendar, Coffee } from "lucide-react";
 import { FunctionComponent } from "react";
 import { Link } from 'react-router'
 
@@ -51,15 +50,15 @@ const Home: FunctionComponent = () => {
                     <div className="flex flex-wrap justify-center gap-4 pt-2">
                         <Button size="lg" asChild>
                             <Link to="/contact">
-                                <Coffee className="mr-2 h-5 w-5" />
-                                Let’s cook.
+                                <Coffee className="mr-1 h-5 w-5" />
+                                Contact Me
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" asChild>
-                            <a href={`mailto:${CONTACT_METHODS.find(method => method.name === 'Email')?.value}`}>
-                                <ExternalLink className="mr-2 h-5 w-5" />
-                                {CONTACT_METHODS.find(method => method.name === 'Email')?.value}
-                            </a>
+                            <Link to="https://cal.com/ayan-kumar-saha">
+                                <Calendar className="mr-1 h-5 w-5" />
+                                Book Session
+                            </Link>
                         </Button>
                     </div>
                 </div>

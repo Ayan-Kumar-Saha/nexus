@@ -13,7 +13,7 @@ export const HOME_PAGE_META = {
     },
     get_in_touch: {
         title: "let's work together",
-        description: " You got something? Open position, freelance project or anything else?"
+        description: " You got something? Open position, freelance project or need help?"
     }
 }
 
