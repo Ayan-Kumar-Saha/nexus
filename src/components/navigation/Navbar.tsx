@@ -49,7 +49,7 @@ const Navbar: FunctionComponent = () => {
                                 <Link
                                     to="https://cal.com/ayan-kumar-saha"
                                     className={`hover:text-primary transition-colors relative text-foreground`}>
-                                    Book 1:1 Session
+                                    Book Session
                                 </Link>
                             </li>
                         </ul>
@@ -88,6 +88,13 @@ const Navbar: FunctionComponent = () => {
                                             </Link>
                                         ))
                                 }
+                                <li>
+                                    <Link
+                                        to="https://cal.com/ayan-kumar-saha"
+                                        className={`block py-2 hover:text-primary transition-colors relative text-foreground`}>
+                                        Book Session
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     )
