@@ -57,7 +57,7 @@ const Home: FunctionComponent = () => {
                         <Button variant="outline" size="lg" asChild>
                             <Link to="https://cal.com/ayan-kumar-saha">
                                 <Calendar className="mr-1 h-5 w-5" />
-                                Book Session
+                                Book 1:1
                             </Link>
                         </Button>
                     </div>

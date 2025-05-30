@@ -49,8 +49,8 @@ export const TESTIMONIALS: ITestimonial[] = [
     {
         id: 5,
         author: "Pritam Sharma",
-        designation: "Consultant",
-        organization: 'PwC',
+        designation: "Developer 2",
+        organization: 'Hyland',
         profileImage: "images/testimonials/pritam_sharma.jpg",
         quote: "I know Ayan from my college days; he has always been hardworking , talented and technology enthusiastic from the very beginning. Presently we're working as colleagues and even in the present circumstances, he has never stopped showing his skill sets as a software developer. ",
         isActive: true
