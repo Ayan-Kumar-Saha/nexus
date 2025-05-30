@@ -21,7 +21,7 @@ const SkillCategoryCard: FunctionComponent<ISkillCategoryCardProps> = ({ categor
                     {category.skills.map((skill: string) => (
                         <span
                             key={skill}
-                            className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-xs">
+                            className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm">
                             {skill}
                         </span>
                     ))}
