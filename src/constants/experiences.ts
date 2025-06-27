@@ -2,6 +2,22 @@ import { IExperience } from "@/interfaces/experience";
 
 export const EXPERIENCES: IExperience[] = [
     {
+        id: 4,
+        company: 'Syntasa',
+        positions: [
+            {
+                id: 1,
+                role: 'Full Stack Engineer',
+                from: 2025,
+                to: 2025,
+                isActive: true,
+                responsibilities: [
+                   
+                ]
+            },
+        ]
+    },
+    {
         id: 1,
         company: 'Bloomscorp',
         positions: [
@@ -10,7 +26,7 @@ export const EXPERIENCES: IExperience[] = [
                 role: 'Senior Engineer I',
                 from: 2024,
                 to: 2025,
-                isActive: true,
+                isActive: false,
                 responsibilities: [
                     'Contributed to the design and development of Bloomsight, a sophisticated web analytics tool, which ultimately yields an accuracy of 80% when compared to Google Analytics (in specific metrics).',
                     'Accomplished the migration and unification of two B2B e-commerce websites by building a single, scalable platform using Angular, Spring Boot, and PostgreSQL, eliminating reliance on WordPress and enabling advanced product customization.',

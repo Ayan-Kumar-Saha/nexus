@@ -11,9 +11,12 @@ interface IResponsibilitiesDialogProps {
 const ResponsibilitiesDialog: FunctionComponent<IResponsibilitiesDialogProps> = ({ position }) => (
     <Dialog>
         <DialogTrigger asChild>
-            <Button variant="ghost" size="sm" className="mt-2">
-                <Info className="mr-1" size={14} /> Know More
-            </Button>
+            {
+                position.responsibilities.length > 0 &&
+                <Button variant="ghost" size="sm" className="mt-2">
+                    <Info className="mr-1" size={14} /> Know More
+                </Button>
+            }
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
             <DialogHeader>

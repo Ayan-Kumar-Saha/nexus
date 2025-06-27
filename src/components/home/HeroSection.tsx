@@ -13,9 +13,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="space-y-6">
-            <div className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
+            {/* <div className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
                 <span>Available for new positions</span>
-            </div>
+            </div> */}
 
             <h1 className="text-3xl md:text-4xl tracking-tight font-bold">
                 <span>I'm <span className="text-primary">Ayan</span></span>
