@@ -73,7 +73,7 @@ const AboutMe = () => {
                 </div>
                 <div className="flex-1/2 flex justify-center items-center">
                     <div className="border-4 border-primary w-[200px] h-[200px] md:w-[230px] md:h-[230px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden">
-                        <img src='images/dp.png' className="w-full h-full object-cover" />
+                        <img src='images/dp2.png' className="w-full h-full object-cover" />
                     </div>
                 </div>
             </motion.div>
