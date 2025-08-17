@@ -45,13 +45,13 @@ const Navbar: FunctionComponent = () => {
                                         </li>
                                     ))
                             }
-                            <li>
+                            {/* <li>
                                 <Link
                                     to="https://cal.com/ayan-kumar-saha"
                                     className={`hover:text-primary transition-colors relative text-foreground`}>
                                     Book 1:1
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                         <ThemeToggle />
                     </div>
@@ -88,13 +88,13 @@ const Navbar: FunctionComponent = () => {
                                             </Link>
                                         ))
                                 }
-                                <li>
+                                {/* <li>
                                     <Link
                                         to="https://cal.com/ayan-kumar-saha"
                                         className={`block py-2 hover:text-primary transition-colors relative text-foreground`}>
                                         Book 1:1
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     )
