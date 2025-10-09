@@ -30,9 +30,10 @@ const content = {
             }
         },
         {
+            "id": "code-1",
             "type": "code",
             "data": {
-                "code": "export default async function Page() {\n  const data = await getData();\n}"
+                "code": "function greet(name) {\n    console.log(`Hello, ${name}!`);\n}\n\ngreet('World');"
             }
         },
         {
