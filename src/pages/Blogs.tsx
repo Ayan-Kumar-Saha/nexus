@@ -1,7 +1,103 @@
-import { FunctionComponent } from "react";
+import {FunctionComponent, useState} from "react";
+import SectionHeader from "@/components/shared/SectionHeader.tsx";
+import {BLOG_PAGE_META} from "@/constants/page-meta.ts";
+import {LuSearch} from "react-icons/lu";
+import {Button} from "@/components/ui/button.tsx";
+import {motion} from "framer-motion";
+import {BLOG_LIST} from "@/constants/blogs.ts";
+import {IBlog} from "@/interfaces/blog.ts";
+import BlogCard from "@/components/blogs/BlogCard.tsx";
+
+const containerVariant = {
+    hidden: {opacity: 0},
+    show: {opacity: 1, transition: {staggerChildren: 0.2,},}
+}
 
 const Blogs: FunctionComponent = () => {
-    return <h1>Blogs</h1>
+    const activeBlogs: IBlog[] = BLOG_LIST.filter(blog => blog.isActive);
+    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+    const allTags: string[] = Array.from(new Set(activeBlogs.flatMap(blog => blog.tags)));
+
+    const onTagClick = (tag: string) => {
+        if (selectedTags.includes(tag)) {
+            setSelectedTags(selectedTags.filter(t => t !== tag));
+        } else {
+            setSelectedTags([...selectedTags, tag])
+        }
+    }
+
+    const filteredBlogs: IBlog[] = activeBlogs.filter(blog => {
+        const matchBySearchTerm: boolean = searchTerm === '' || (
+            blog.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
+            blog.description.toLowerCase().includes(searchTerm.trim().toLowerCase())
+        )
+        const matchByTag = selectedTags.length === 0 || selectedTags.every(tag => blog.tags.includes(tag));
+        return matchBySearchTerm && matchByTag;
+    })
+
+    return (
+        <>
+            <SectionHeader title={BLOG_PAGE_META.title} description={BLOG_PAGE_META.description}/>
+            <div className="flex items-center gap-2 p-2 rounded-md border border-border-default mt-6 md:mt-12">
+                <LuSearch className="text-lg text-secondary-text"/>
+                <input className="w-full outline-0 text-sm"
+                       type="text"
+                       placeholder="Search blogs..."
+                       value={searchTerm}
+                       onChange={(e) => setSearchTerm(e.target.value)}/>
+            </div>
+            <div className="mt-6">
+                <p className="text-sm text-muted-foreground mb-2">Filter by tags:</p>
+                <div className="flex flex-wrap gap-2 my-4">
+                    {
+                        allTags.map(tag => (
+                            <Button
+                                key={tag}
+                                variant={selectedTags.includes(tag) ? "default" : "outline"}
+                                size="sm"
+                                onClick={() => onTagClick(tag)}
+                                className="text-xs cursor-pointer"
+                            >
+                                {tag}
+                            </Button>
+                        ))
+                    }
+                </div>
+            </div>
+
+            {
+                filteredBlogs.length > 0
+                    ? (
+                        <motion.div
+                            variants={containerVariant}
+                            initial="hidden"
+                            animate="show"
+                            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                            {
+                                filteredBlogs.map((blog) => (
+                                    <BlogCard key={blog.id} blog={blog}/>
+                                ))
+                            }
+                        </motion.div>
+                    ) : (
+                        <div className="text-center py-10">
+                            <p className="text-muted-foreground">No blogs found matching your criteria.</p>
+                            <Button
+                                variant="link"
+                                onClick={() => {
+                                    setSearchTerm('');
+                                    setSelectedTags([]);
+                                }}
+                            >
+                                Clear filters
+                            </Button>
+                        </div>
+                    )
+            }
+        </>
+    )
 }
 
 export default Blogs;

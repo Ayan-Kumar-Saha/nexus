@@ -6,6 +6,7 @@ const AboutMePage = lazy(() => import('../pages/AboutMe'));
 const ProjectsPage = lazy(() => import('../pages/Projects'));
 const ProjectDetailsPage = lazy(() => import('../pages/ProjectDetails'));
 const BlogsPage = lazy(() => import('../pages/Blogs'));
+const BlogDetailsPage = lazy(() => import('../pages/BlogDetails'));
 const ContactPage = lazy(() => import('../pages/Contact'));
 
 export const NAV_LINKS: INavLink[] = [
@@ -46,7 +47,15 @@ export const NAV_LINKS: INavLink[] = [
         name: 'Blogs',
         path: '/blogs',
         element: BlogsPage,
-        isActive: false,
+        isActive: true,
+        showInNav: true
+    },
+    {
+        id: 4,
+        name: 'Blogs',
+        path: '/blogs/:slug',
+        element: BlogDetailsPage,
+        isActive: true,
         showInNav: false
     },
     {

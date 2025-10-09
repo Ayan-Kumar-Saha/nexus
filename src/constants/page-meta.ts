@@ -33,3 +33,8 @@ export const PROJECT_PAGE_META = {
     title: "projects",
     description: "A glimpse into the things I’ve built — with purpose, precision, and a bit of personality."
 }
+
+export const BLOG_PAGE_META = {
+    title: "blogs",
+    description: "Thoughts, tutorials, and insights — straight from the dev desk to your screen."
+}
