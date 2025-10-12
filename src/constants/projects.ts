@@ -2,6 +2,41 @@ import { IProject } from "../interfaces/project";
 
 export const PROJECT_LIST: IProject[] = [
     {
+        id: 11,
+        name: 'safekeeper',
+        description: 'A tiny CLI tool for safely managing and sharing .env files alongside your code across teams.',
+        tags: ['Security', 'Javascript', 'Typescript', 'npm'],
+        isCodeAvailable: true,
+        codebaseUrl: 'https://github.com/Ayan-Kumar-Saha/safekeeper',
+        isDemoAvailable: true,
+        demoUrl: 'https://www.npmjs.com/package/safekeeper',
+        isFeatured: false,
+        imagePath: '/images/projects/safekeeper.png',
+        isActive: true,
+        isDetailsAvailable: true,
+        longDescription: "A free, offline and lightweight CLI tool for managing and sharing encrypted .env files across teams, ensuring sensitive environment variables can be safely version-controlled and synchronized without risk of exposure.",
+        features: [
+            "AES-256-GCM encryption for strong, modern, symmetric security.",
+            "Fully offline and dependency-free — no cloud, no network calls.",
+            "Automatically encrypt and decrypt .env files with simple commands.",
+            "Optional custom or auto-generated secret keys for flexibility.",
+            "Built-in key management system with local encrypted storage.",
+            "Interactive CLI powered by Inquirer for a smooth user experience.",
+            "Supports multiple keys and environment contexts (e.g. dev, staging, prod).",
+            "Version-controlled safe sharing — encrypted files can be committed to Git.",
+            "Clear feedback and helpful prompts throughout every command.",
+            "Lightweight, free, and ideal for small teams or solo developers."
+        ],
+        contributions: [
+            "Ideated and built the entire SafeKeeper CLI from scratch using Node.js, Commander, and Inquirer.",
+            "Designed a simple yet powerful encryption flow using AES-256-GCM for secure .env handling.",
+            "Implemented local encrypted key storage to simplify key reuse while maintaining security.",
+            "Developed intuitive CLI commands for encryption, decryption, and key management (list, get, set, delete).",
+            "Focused on seamless developer experience with color-coded prompts and informative output.",
+            "Ensured fully offline functionality for complete control and privacy."
+        ]
+    },
+    {
         id: 1,
         name: 'Nexus',
         description: 'My personal developer portfolio app',
