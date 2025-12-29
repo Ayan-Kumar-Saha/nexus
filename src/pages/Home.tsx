@@ -55,7 +55,7 @@ const Home: FunctionComponent = () => {
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" asChild>
-                            <Link to="https://cal.com/ayan-kumar-saha">
+                            <Link to="https://topmate.io/ayan_kumar_saha">
                                 <Calendar className="mr-1 h-5 w-5" />
                                 Book 1:1
                             </Link>
