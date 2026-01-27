@@ -11,49 +11,70 @@ const CodeSnippet: FunctionComponent = () => {
         const months = Math.floor((days % 365.25) / 30.44);
         const remDays = Math.floor((days % 365.25) % 30.44);
 
-        return `${years} years, ${months} months, ${remDays} days`;
+        return `${years}y ${months}m ${remDays}d`;
     };
 
     return (
         <div className="bg-card/10 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-card/80 border-b border-border px-4 py-2 flex items-center">
-                <div className="flex space-x-2 mr-4">
-                    <div className="w-3 h-3 rounded-full bg-destructive/70"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/70"></div>
+            {/* Terminal Header */}
+            <div className="bg-card/80 border-b border-border px-4 py-2 flex items-center justify-between">
+                <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                 </div>
                 <p className="text-xs font-mono text-muted-foreground">
-                    ayankumarsaha@portfolio ~ developer.sh
+                    ayan@fullstack: ~ (zsh)
                 </p>
+                <div className="w-10"></div> {/* Spacer for symmetry */}
             </div>
-            <div className="p-5 font-mono text-sm">
-                <div className="mb-2 text-muted-foreground">
-                    <span className="text-primary">$</span> whoami
-                </div>
-                <div className="mb-2 pl-4">ayankumarsaha</div>
 
-                <div className="mb-2 text-muted-foreground">
-                    <span className="text-primary">$</span> uptime
-                </div>
-                <div className="mb-2 pl-4">
-                    {new Date().toLocaleTimeString()} up {formatUptime()}, 0 users, load average: 0.00, 0.01, 0.00
+            <div className="p-5 font-mono text-sm leading-relaxed">
+                {/* Whoami */}
+                <div className="mb-3">
+                    <span className="text-primary font-bold">➜</span> 
+                    <span className="text-cyan-400 ml-2">~</span> 
+                    <span className="text-muted-foreground ml-2">whoami</span>
+                    <div className="text-foreground mt-1 pl-4">ayan_kumar_saha</div>
                 </div>
 
-                <div className="mb-2 text-muted-foreground">
-                    <span className="text-primary">$</span> uname -a
-                </div>
-                <div className="mb-2 pl-4">
-                    ayanOS 6.9.42-dev #1 SMP PREEMPT IST x86_64 AyanFullStack
+                {/* Uptime - Personalized "Load Average" */}
+                <div className="mb-3">
+                    <span className="text-primary font-bold">➜</span> 
+                    <span className="text-cyan-400 ml-2">~</span> 
+                    <span className="text-muted-foreground ml-2">uptime</span>
+                    <div className="text-foreground mt-1 pl-4">
+                        {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} up {formatUptime()}, 1 user (active), load: high_creative_output
+                    </div>
                 </div>
 
-                <div className="mb-2 text-muted-foreground">
-                    <span className="text-primary">$</span> echo $CURRENT_FOCUS
+                {/* Current Focus - Combining AI and SaaS goals */}
+                <div className="mb-3">
+                    <span className="text-primary font-bold">➜</span> 
+                    <span className="text-cyan-400 ml-2">~</span> 
+                    <span className="text-muted-foreground ml-2">echo $CURRENT_FOCUS</span>
+                    <div className="text-yellow-200/90 mt-1 pl-4">
+                        "Architecting niche SaaS & bridging business gaps with Applied AI"
+                    </div>
                 </div>
-                <div className="mb-2 pl-4">building reliable, scalable, robust apps</div>
 
+                {/* Learning - Specificity shows depth */}
+                <div className="mb-3">
+                    <span className="text-primary font-bold">➜</span> 
+                    <span className="text-cyan-400 ml-2">~</span> 
+                    <span className="text-muted-foreground ml-2">ls -l ~/skills/learning</span>
+                    <div className="text-foreground mt-1 pl-4">
+                        <span className="text-green-400">drwxr-xr-x</span> applied-ai <br />
+                        <span className="text-green-400">drwxr-xr-x</span> ai-automation <br />
+                        <span className="text-green-400">drwxr-xr-x</span> ai-driven-saas
+                    </div>
+                </div>
+
+                {/* Cursor */}
                 <div className="flex items-center">
-                    <span className="text-primary">$</span>
-                    <span className="ml-2 animate-pulse">_</span>
+                    <span className="text-primary font-bold">➜</span>
+                    <span className="text-cyan-400 ml-2">~</span>
+                    <span className="ml-2 w-2 h-4 bg-primary animate-caret-blink"></span>
                 </div>
             </div>
         </div>
