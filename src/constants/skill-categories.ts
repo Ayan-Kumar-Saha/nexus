@@ -15,7 +15,7 @@ export const SKILL_CATEGORIES: ISkillCategory[] = [
     {
         category: 'Backend',
         icon: Server,
-        skills: ['Node.js', 'Express', 'Spring Boot', 'WebSockets']
+        skills: ['Node.js', 'Express', 'Nest.js', 'Firebase', 'Spring Boot', 'WebSockets']
     },
     {
         category: 'Database',
@@ -25,11 +25,11 @@ export const SKILL_CATEGORIES: ISkillCategory[] = [
     {
         category: 'DevOps',
         icon: GitBranch,
-        skills: ['Git', 'GitHub Actions', 'Docker', 'Azure Pipelines']
+        skills: ['Git', 'GitHub Actions', 'Docker', 'Azure Pipelines', 'Jenkins']
     },
     {
         category: 'Cloud',
         icon: Cloud,
-        skills: ['Azure', 'AWS']
+        skills: ['Azure', 'GCP', 'AWS']
     }
 ];
