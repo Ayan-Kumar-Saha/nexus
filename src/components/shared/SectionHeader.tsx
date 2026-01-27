@@ -8,9 +8,9 @@ type ISectionHeaderProps = {
 const SectionHeader: FunctionComponent<ISectionHeaderProps> = ({ title, description = '' }) => {
     return (
         <>
-            <h1 className="font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1 mb-6">
+            <h2 className="font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1 mb-2">
                 <span className="text-primary">&gt;</span> {title}
-            </h1>
+            </h2>
             {description && <p className="text-muted-foreground mb-8">{description}</p>}
         </>
     )
