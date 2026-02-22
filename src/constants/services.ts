@@ -1,23 +1,48 @@
 import { IService } from "@/interfaces/service";
-import { Code, FileCode, Laptop } from "lucide-react";
+import { 
+    Search, 
+    Compass, 
+    Layout, 
+    Settings2, 
+    Rocket,
+    RefreshCw
+} from "lucide-react";
 
 export const SERVICES: IService[] = [
     {
         id: 1,
-        icon: Code,
-        title: 'Frontend Development',
-        description: 'Crafting responsive, accessible, and interactive user interfaces with a focus on performance, security, usability, SEO, and seamless cross-device experiences.'
+        icon: Search,
+        title: 'Understand & Explore',
+        description: 'First, I take time to truly understand your idea and your goals. We focus on the real problem you want to solve so we start on the right path.'
     },
     {
         id: 2,
-        icon: FileCode,
-        title: 'Backend Development',
-        description: 'Designing scalable, secure, and high-performance server-side systems with clean API structures, efficient data handling, and robust authentication and authorization mechanisms.'
+        icon: Compass,
+        title: 'Clear Plan',
+        description: 'Next, I create a simple, clear plan for how everything will work. You’ll always know what we’re building and why.'
     },
     {
         id: 3,
-        icon: Laptop,
-        title: 'Full Stack Solutions',
-        description: 'Delivering end-to-end solutions from database design to intuitive UI, with a strong focus on system architecture, performance optimization, CI/CD pipelines, and DevOps best practices.'
+        icon: Layout,
+        title: 'Design Preview',
+        description: 'Before development begins, I design how your product will look and feel. We refine it together until it feels smooth and easy to use.'
+    },
+    {
+        id: 4,
+        icon: Settings2,
+        title: 'Build',
+        description: 'Then I build the core features behind the scenes. I share regular updates so you can see the progress step by step.'
+    },
+    {
+        id: 5,
+        icon: Rocket,
+        title: 'Launch',
+        description: 'I take care of moving your project live and make sure everything works properly so your users can start using it without issues.'
+    },
+    {
+        id: 6,
+        icon: RefreshCw,
+        title: 'Ongoing Support',
+        description: 'After launch, I continue to support and improve your product, helping you grow and keeping everything running smoothly.'
     }
-] 
+]
