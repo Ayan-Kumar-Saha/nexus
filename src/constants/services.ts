@@ -13,36 +13,36 @@ export const SERVICES: IService[] = [
         id: 1,
         icon: Search,
         title: 'Understand & Explore',
-        description: 'First, I take time to truly understand your idea and your goals. We focus on the real problem you want to solve so we start on the right path.'
+        description: 'I start by listening. We talk through your idea, your goals, and what success actually looks like - so I build the right thing, not just something.'
     },
     {
         id: 2,
         icon: Compass,
         title: 'Clear Plan',
-        description: 'Next, I create a simple, clear plan for how everything will work. You’ll always know what we’re building and why.'
+        description: 'Before a single line of code, we agree on what\'s being built and how. No surprises, no scope creep - just a clear roadmap we both understand.'
     },
     {
         id: 3,
         icon: Layout,
         title: 'Design Preview',
-        description: 'Before development begins, I design how your product will look and feel. We refine it together until it feels smooth and easy to use.'
+        description: 'You\'ll see exactly how your product looks and feels before I start building. We tweak it together until it clicks.'
     },
     {
         id: 4,
         icon: Settings2,
         title: 'Build',
-        description: 'Then I build the core features behind the scenes. I share regular updates so you can see the progress step by step.'
+        description: 'This is where I write the code. I work in focused cycles and keep you in the loop with regular updates - so you\'re never left wondering what\'s happening.'
     },
     {
         id: 5,
         icon: Rocket,
         title: 'Launch',
-        description: 'I take care of moving your project live and make sure everything works properly so your users can start using it without issues.'
+        description: 'I handle the deployment so you don\'t have to. Your product goes live cleanly, tested, and ready for real users.'
     },
     {
         id: 6,
         icon: RefreshCw,
         title: 'Ongoing Support',
-        description: 'After launch, I continue to support and improve your product, helping you grow and keeping everything running smoothly.'
+        description: 'Shipping is just the beginning. I stick around to fix issues, add features, and help your product grow as your needs change.'
     }
 ]
