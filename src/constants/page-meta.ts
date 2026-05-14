@@ -33,3 +33,7 @@ export const PROJECT_PAGE_META = {
     title: "shipped_solutions",
     description: "Business logic meets clean code - purpose-driven builds that scale."
 }
+
+export const SITE_INFO = {
+    lastUpdated: "Sep 14, 2025"
+}
