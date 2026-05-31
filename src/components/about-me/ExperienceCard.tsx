@@ -51,10 +51,6 @@ const PositionRow: FunctionComponent<{ position: IPosition; isLast: boolean }> =
 const ExperienceCard: FunctionComponent<IExperienceCardProps> = ({ experience }) => {
     const hasActivePosition = experience.positions.some(p => p.isActive);
 
-    const allFrom = experience.positions.map(p => p.from.year * 12 + p.from.month);
-    const allTo = experience.positions.map(p =>
-        p.isActive ? new Date().getFullYear() * 12 + new Date().getMonth() + 1 : p.to.year * 12 + p.to.month
-    );
     const earliestFrom = experience.positions.reduce((min, p) =>
         (p.from.year * 12 + p.from.month) < (min.year * 12 + min.month) ? p.from : min,
         experience.positions[0].from
