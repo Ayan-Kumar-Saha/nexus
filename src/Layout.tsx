@@ -4,6 +4,7 @@ import Footer from "@/components/footer/Footer";
 import { Toaster } from "./components/ui/sonner";
 import { ReactLenis } from 'lenis/react'
 import ScrollHandler from "@/components/shared/ScrollHandler";
+import BackToTop from "@/components/shared/BackToTop";
 
 const Layout = () => {
     return (
@@ -19,6 +20,7 @@ const Layout = () => {
             </div>
             <Toaster />
             <ScrollHandler />
+            <BackToTop />
         </ReactLenis>
     )
 }

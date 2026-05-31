@@ -8,12 +8,10 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 1,
                 role: 'Full Stack Engineer',
-                from: 2025,
-                to: 2025,
+                from: { month: 6, year: 2025 },
+                to: { month: 1, year: 2025 },
                 isActive: true,
-                responsibilities: [
-                   
-                ]
+                responsibilities: []
             },
         ]
     },
@@ -24,8 +22,8 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 1,
                 role: 'Senior Engineer I',
-                from: 2024,
-                to: 2025,
+                from: { month: 2, year: 2024 },
+                to: { month: 6, year: 2025 },
                 isActive: false,
                 responsibilities: [
                     'Contributed to the design and development of Bloomsight, a sophisticated web analytics tool, which ultimately yields an accuracy of 80% when compared to Google Analytics (in specific metrics).',
@@ -43,8 +41,8 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 1,
                 role: 'Full Stack Developer',
-                from: 2023,
-                to: 2024,
+                from: { month: 5, year: 2023 },
+                to: { month: 1, year: 2024 },
                 isActive: false,
                 responsibilities: [
                     'Contributed to the development of the in-house Chatware product by implementing typing indicators and online/offline presence using heartbeat pings and user state management, enhancing user engagement and delivering a dynamic real-time experience.',
@@ -61,8 +59,8 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 1,
                 role: 'Tech Lead',
-                from: 2023,
-                to: 2023,
+                from: { month: 7, year: 2022 },
+                to: { month: 4, year: 2023 },
                 isActive: false,
                 responsibilities: [
                     'Led a team of Full Stack and AI developers to create a unique yard occupancy solution, boosting container placement efficiency by 35% and automating position detection and record-keeping.',
@@ -74,8 +72,8 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 2,
                 role: 'Team Lead',
-                from: 2022,
-                to: 2023,
+                from: { month: 1, year: 2022 },
+                to: { month: 7, year: 2022 },
                 isActive: false,
                 responsibilities: [
                     'Single-handedly built over 15 CI/CD pipelines for web, Android, and iOS projects using Azure Pipelines. This eliminated single-point dependency, reducing deployment time by 80%.',
@@ -87,8 +85,8 @@ export const EXPERIENCES: IExperience[] = [
             {
                 id: 3,
                 role: 'Senior Associate Developer',
-                from: 2020,
-                to: 2022,
+                from: { month: 9, year: 2020 },
+                to: { month: 1, year: 2022 },
                 isActive: false,
                 responsibilities: [
                     'Within 18 months, planned and implemented multiple responsive, platform-independent apps, reaching over 10,000 users globally.',
@@ -97,5 +95,4 @@ export const EXPERIENCES: IExperience[] = [
             },
         ]
     },
-
-] 
+]

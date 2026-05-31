@@ -6,29 +6,24 @@ import Testimonials from "@/components/home/Testimonials";
 import { Button } from "@/components/ui/button";
 import { HOME_PAGE_META } from "@/constants/page-meta";
 import { motion } from "framer-motion";
-import { BriefcaseBusiness, Calendar, Coffee } from "lucide-react";
+import { Calendar, Coffee } from "lucide-react";
 import { FunctionComponent } from "react";
 import { Link } from 'react-router'
 
 const Home: FunctionComponent = () => {
     return (
-        <div className="space-y-16 md:space-y-24">
-            <section className="relative rounded-xl overflow-hidden">
-                <div className="relative z-10 py-8 md:py-16 px-4">
-                    <div className="mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="space-y-20 md:space-y-28">
+            <section>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center py-6 md:py-12">
+                    <HeroSection />
 
-                            <HeroSection />
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                                className="hidden md:block bg-card border border-border shadow-lg rounded-lg overflow-hidden">
-                                <CodeSnippet />
-                            </motion.div>
-                        </div>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.25 }}
+                        className="hidden md:block">
+                        <CodeSnippet />
+                    </motion.div>
                 </div>
             </section>
 
@@ -38,25 +33,25 @@ const Home: FunctionComponent = () => {
 
             <Testimonials />
 
-            <section className="relative bg-primary/5 rounded-xl p-8 md:p-12">
-                <div className="max-w-3xl mx-auto text-center space-y-6">
-                    <BriefcaseBusiness size={36} className="mx-auto text-primary" />
-                    <h2 className="text-2xl md:text-3xl font-bold">
-                        {HOME_PAGE_META.get_in_touch.title}
+            <section className="border border-border/40 rounded-sm p-8 md:p-12 bg-card">
+                <div className="max-w-2xl space-y-5">
+                    <p className="font-mono text-xs text-primary">// let&apos;s_collaborate</p>
+                    <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+                        {HOME_PAGE_META.get_in_touch.heading}
                     </h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-muted-foreground leading-relaxed">
                         {HOME_PAGE_META.get_in_touch.description}
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4 pt-2">
-                        <Button size="lg" asChild>
+                    <div className="flex flex-wrap gap-3 pt-1">
+                        <Button size="lg" className="rounded-sm" asChild>
                             <Link to="/contact">
-                                <Coffee className="mr-1 h-5 w-5" />
+                                <Coffee className="mr-2 h-4 w-4" />
                                 Contact Me
                             </Link>
                         </Button>
-                        <Button variant="outline" size="lg" asChild>
+                        <Button variant="outline" size="lg" className="rounded-sm" asChild>
                             <Link to="https://topmate.io/ayan_kumar_saha">
-                                <Calendar className="mr-1 h-5 w-5" />
+                                <Calendar className="mr-2 h-4 w-4" />
                                 Book 1:1
                             </Link>
                         </Button>

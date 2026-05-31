@@ -8,9 +8,9 @@ interface ISocialCardProps {
 const SocialCard: FunctionComponent<ISocialCardProps> = ({ method }) => {
     const { icon: Icon, link } = method;
     return (
-        <div className="flex items-center card-hover p-4 border bg-card rounded-md">
-            <a href={link} className="hover:text-primary" target="_blank">
-                <Icon className="text-xl" />
+        <div className="flex items-center p-3 border border-border/40 rounded-sm hover:border-primary/30 bg-card transition-colors">
+            <a href={link} className="hover:text-primary transition-colors" target="_blank">
+                <Icon size={18} />
             </a>
         </div>
     )

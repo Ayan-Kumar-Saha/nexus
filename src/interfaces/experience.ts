@@ -1,9 +1,14 @@
 
+export interface IDatePoint {
+    month: number;
+    year: number;
+}
+
 export interface IPosition {
     id: number;
     role: string;
-    from: number;
-    to: number;
+    from: IDatePoint;
+    to: IDatePoint;
     isActive: boolean;
     responsibilities: string[];
 }

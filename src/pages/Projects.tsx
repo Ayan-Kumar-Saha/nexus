@@ -1,4 +1,4 @@
-import { LuSearch } from "react-icons/lu";
+import { Search } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { PROJECT_LIST } from "@/constants/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
@@ -39,28 +39,31 @@ const Projects: FunctionComponent = () => {
     return (
         <>
             <SectionHeader title={PROJECT_PAGE_META.title} description={PROJECT_PAGE_META.description} />
-            <div className="flex items-center gap-2 p-2 rounded-md border border-border-default mt-6 md:mt-12">
-                <LuSearch className="text-lg text-secondary-text" />
-                <input className="w-full outline-0 text-sm"
+            <div className="flex items-center gap-2 px-3 py-2 rounded-sm border border-border/40 mt-6 md:mt-10 bg-card focus-within:border-primary/40 transition-colors">
+                <Search size={14} className="text-muted-foreground shrink-0" />
+                <input
+                    className="w-full outline-none text-sm bg-transparent placeholder:text-muted-foreground/60 font-mono"
                     type="text"
-                    placeholder="Search projects..."
+                    placeholder="search projects..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
-            <div className="mt-6">
-                <p className="text-sm text-muted-foreground mb-2">Filter by tags:</p>
-                <div className="flex flex-wrap gap-2 my-4">
+            <div className="mt-5">
+                <p className="font-mono text-xs text-muted-foreground mb-3">// filter by tag</p>
+                <div className="flex flex-wrap gap-1.5">
                     {
                         allTags.map(tag => (
-                            <Button
+                            <button
                                 key={tag}
-                                variant={selectedTags.includes(tag) ? "default" : "outline"}
-                                size="sm"
                                 onClick={() => onTagClick(tag)}
-                                className="text-xs cursor-pointer"
+                                className={`px-2.5 py-1 rounded-sm text-xs font-mono border transition-colors cursor-pointer ${
+                                    selectedTags.includes(tag)
+                                        ? "border-primary/50 bg-primary/10 text-primary"
+                                        : "border-border/40 bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                                }`}
                             >
                                 {tag}
-                            </Button>
+                            </button>
                         ))
                     }
                 </div>
@@ -73,7 +76,7 @@ const Projects: FunctionComponent = () => {
                             variants={containerVariant}
                             initial="hidden"
                             animate="show"
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
                             {
                                 filteredProjects.map((project) => (
                                     <ProjectCard key={project.id} project={project} />

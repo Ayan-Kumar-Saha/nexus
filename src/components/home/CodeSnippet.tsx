@@ -1,80 +1,58 @@
 import { FunctionComponent } from "react";
 
 const CodeSnippet: FunctionComponent = () => {
-    const formatUptime = () => {
-        const start = new Date("2020-09-01T00:00:00Z");
-        const now = new Date();
-        const diff = now.getTime() - start.getTime();
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const years = Math.floor(days / 365.25);
-        const months = Math.floor((days % 365.25) / 30.44);
-        const remDays = Math.floor((days % 365.25) % 30.44);
-
-        return `${years}y ${months}m ${remDays}d`;
-    };
-
     return (
-        <div className="bg-card/10 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-hidden">
-            {/* Terminal Header */}
-            <div className="bg-card/80 border-b border-border px-4 py-2 flex items-center justify-between">
-                <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+        <div className="bg-[oklch(0.93_0.004_265)] dark:bg-[oklch(0.08_0.004_265)] border border-black/8 dark:border-white/8 rounded-sm shadow-lg overflow-hidden font-mono text-sm ring-1 ring-black/10">
+            <div className="bg-[oklch(0.87_0.005_265)] dark:bg-[oklch(0.12_0.005_265)] border-b border-black/8 dark:border-white/8 px-4 py-2.5 flex items-center justify-between">
+                <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
                 </div>
-                <p className="text-xs font-mono text-muted-foreground">
-                    ayan@fullstack: ~ (zsh)
-                </p>
-                <div className="w-10"></div> {/* Spacer for symmetry */}
+                <p className="text-xs text-black/40 dark:text-white/30">ayan@dev: ~ (zsh)</p>
+                <div className="w-12" />
             </div>
 
-            <div className="p-5 font-mono text-sm leading-relaxed">
-                {/* Whoami */}
-                <div className="mb-3">
-                    <span className="text-primary font-bold">➜</span> 
-                    <span className="text-cyan-400 ml-2">~</span> 
-                    <span className="text-muted-foreground ml-2">whoami</span>
-                    <div className="text-foreground mt-1 pl-4">ayan_kumar_saha</div>
-                </div>
-
-                {/* Uptime - Personalized "Load Average" */}
-                <div className="mb-3">
-                    <span className="text-primary font-bold">➜</span> 
-                    <span className="text-cyan-400 ml-2">~</span> 
-                    <span className="text-muted-foreground ml-2">uptime</span>
-                    <div className="text-foreground mt-1 pl-4">
-                        {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} up {formatUptime()}, 1 user (active), load: high_creative_output
+            <div className="p-5 leading-relaxed text-black/75 dark:text-white/80">
+                <div className="mb-4">
+                    <div className="flex items-center gap-2">
+                        <span className="text-primary">❯</span>
+                        <span className="text-black/45 dark:text-white/40">ls ~/domains</span>
+                    </div>
+                    <div className="mt-1 pl-5 text-black/65 dark:text-white/70 flex flex-wrap gap-x-4 gap-y-0.5">
+                        <span>web</span>
+                        <span>mobile</span>
+                        <span>wearables</span>
+                        <span>devops</span>
+                        <span>ai</span>
                     </div>
                 </div>
 
-                {/* Current Focus - Combining AI and SaaS goals */}
-                <div className="mb-3">
-                    <span className="text-primary font-bold">➜</span> 
-                    <span className="text-cyan-400 ml-2">~</span> 
-                    <span className="text-muted-foreground ml-2">echo $CURRENT_FOCUS</span>
-                    <div className="text-yellow-200/90 mt-1 pl-4">
-                        "Architecting niche SaaS & bridging business gaps with Applied AI"
+                <div className="mb-4">
+                    <div className="flex items-center gap-2">
+                        <span className="text-primary">❯</span>
+                        <span className="text-black/45 dark:text-white/40">git log --oneline -3</span>
+                    </div>
+                    <div className="mt-1 pl-5 text-black/65 dark:text-white/70 space-y-0.5">
+                        <div><span className="text-primary/70 dark:text-primary/60">a3f1c2e</span> shipped saas product v2</div>
+                        <div><span className="text-primary/70 dark:text-primary/60">b9d4f91</span> wearable integration module</div>
+                        <div><span className="text-primary/70 dark:text-primary/60">c2e9a1d</span> ci/cd across 20 projects</div>
                     </div>
                 </div>
 
-                {/* Learning - Specificity shows depth */}
-                <div className="mb-3">
-                    <span className="text-primary font-bold">➜</span> 
-                    <span className="text-cyan-400 ml-2">~</span> 
-                    <span className="text-muted-foreground ml-2">ls -l ~/skills/learning</span>
-                    <div className="text-foreground mt-1 pl-4">
-                        <span className="text-green-400">drwxr-xr-x</span> applied-ai <br />
-                        <span className="text-green-400">drwxr-xr-x</span> ai-automation <br />
-                        <span className="text-green-400">drwxr-xr-x</span> ai-driven-saas
+                <div className="mb-4">
+                    <div className="flex items-center gap-2">
+                        <span className="text-primary">❯</span>
+                        <span className="text-black/45 dark:text-white/40">cat approach.txt</span>
+                    </div>
+                    <div className="mt-1 pl-5 text-amber-700/80 dark:text-amber-300/80">
+                        clean_code · intentional_design · ship_fast
                     </div>
                 </div>
 
-                {/* Cursor */}
-                <div className="flex items-center">
-                    <span className="text-primary font-bold">➜</span>
-                    <span className="text-cyan-400 ml-2">~</span>
-                    <span className="ml-2 w-2 h-4 bg-primary animate-caret-blink"></span>
+                <div className="flex items-center gap-2">
+                    <span className="text-primary">❯</span>
+                    <span className="w-2 h-4 bg-primary/80 animate-caret-blink" />
                 </div>
             </div>
         </div>

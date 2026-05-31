@@ -1,7 +1,5 @@
 import { ITestimonial } from "@/interfaces/testimonial";
-import { Card } from "@/components/ui/card";
 import { FunctionComponent } from "react";
-import { Quote } from "lucide-react";
 
 interface ITestimonialCardProps {
     testimonial: ITestimonial
@@ -10,28 +8,24 @@ interface ITestimonialCardProps {
 const TestimonialCard: FunctionComponent<ITestimonialCardProps> = ({ testimonial }) => {
     const { author, profileImage, quote, designation, organization } = testimonial;
     return (
-        <Card className="flex flex-col justify-between h-full min-h-[320px] border border-border/50 p-6 shadow-sm transition-all hover:shadow-md hover:border-primary/30">
-            <div className="flex-grow">
-                <Quote className="h-8 w-8 text-primary/20 mb-4" />
-                <p className="text-sm text-foreground text-justify mb-6 line-clamp-7">{quote}</p>
-            </div>
-
-            <div className="flex items-center gap-4 mt-auto">
+        <div className="flex flex-col h-full min-h-[260px] border border-border/40 rounded-sm p-6 hover:border-primary/30 transition-colors bg-card">
+            <p className="text-sm text-foreground leading-relaxed mb-6 flex-grow line-clamp-6">
+                &ldquo;{quote}&rdquo;
+            </p>
+            <div className="flex items-center gap-3 pt-4 border-t border-border/40">
                 <img
                     src={profileImage ? profileImage : 'images/placeholder.svg'}
                     alt={author}
-                    className="w-12 h-12 rounded-full object-cover border border-muted"
+                    className="w-9 h-9 rounded-full object-cover border border-border/40"
                 />
                 <div>
-                    <p className="font-semibold">{author}</p>
-                    <p className="text-sm text-muted-foreground">
-                        {designation}
+                    <p className="text-sm font-semibold">{author}</p>
+                    <p className="text-xs text-muted-foreground">
+                        {designation}{organization ? ` · ${organization}` : ''}
                     </p>
-                    {organization && <p className="text-xs text-primary">@ {organization}</p>}
                 </div>
             </div>
-        </Card>
-
+        </div>
     );
 }
 

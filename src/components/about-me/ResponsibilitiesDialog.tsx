@@ -1,6 +1,4 @@
 import { Dialog, DialogContent, DialogHeader, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Info } from "lucide-react";
 import { IPosition } from "@/interfaces/experience";
 import { FunctionComponent } from "react";
 
@@ -13,31 +11,27 @@ const ResponsibilitiesDialog: FunctionComponent<IResponsibilitiesDialogProps> = 
         <DialogTrigger asChild>
             {
                 position.responsibilities.length > 0 &&
-                <Button variant="ghost" size="sm" className="mt-2">
-                    <Info className="mr-1" size={14} /> Know More
-                </Button>
+                <button className="mt-1.5 font-mono text-xs text-primary hover:underline underline-offset-4 cursor-pointer">
+                    what I did →
+                </button>
             }
         </DialogTrigger>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-lg rounded-sm">
             <DialogHeader>
-                <DialogTitle>{position.role}</DialogTitle>
-                <DialogDescription>
-                    {position.from} - {position.isActive ? 'Now' : position.to}
+                <DialogTitle className="font-mono text-sm">{position.role}</DialogTitle>
+                <DialogDescription className="font-mono text-xs">
+                    {['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][position.from.month - 1]} {position.from.year}
+                    {position.isActive ? ' – now' : ` – ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][position.to.month - 1]} ${position.to.year}`}
                 </DialogDescription>
             </DialogHeader>
-            <div className="mt-4">
-                <h4 className="text-sm font-medium mb-2">Responsibilities:</h4>
-                <ul className="space-y-1.5 text-sm">
-                    {
-                        position.responsibilities.map((responsibility, idx) => (
-                            <li key={idx} className="flex items-start">
-                                <span className="mr-2 text-primary">•</span>
-                                <span>{responsibility}</span>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
+            <ul className="mt-2 space-y-2.5 text-sm text-muted-foreground">
+                {position.responsibilities.map((responsibility, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                        <span className="text-primary mt-1 shrink-0">›</span>
+                        <span>{responsibility}</span>
+                    </li>
+                ))}
+            </ul>
         </DialogContent>
     </Dialog>
 );

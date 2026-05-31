@@ -1,37 +1,38 @@
 export const HOME_PAGE_META = {
     services: {
-        title: "how_i_create_value",
-        description: "Transforming business challenges into elegant, human-centered software solutions."
+        title: "how_i_work",
+        description: "From the first conversation to a shipped product, here’s what working with me looks like."
     },
     featured_project: {
-        title: "ideas_in_production",
-        description: "A selection of full-stack systems built with purpose."
+        title: "things_i’ve_built",
+        description: "Stuff I’ve shipped. Actual problems solved for actual people."
     },
     testimonial: {
-        title: "feedback_loop",
-        description: "Honest feedback from the founders and mentors I’ve partnered with."
+        title: "what_people_say",
+        description: "From founders, managers, and teammates I’ve worked closely with."
     },
     get_in_touch: {
-        title: "let's_collaborate",
-        description: "Have a project idea or a business bottleneck? Let's build a bridge from 'what if' to 'it works'."
+        title: "let’s_collaborate",
+        heading: "Got something to build?",
+        description: "Got an idea or a product problem you’re stuck on? I’m happy to talk it through. No pitch required."
     }
 }
 
 export const ABOUT_PAGE_META = {
     title: "whoami --detailed",
     description: "Full Stack Engineer by trade, problem solver by nature.",
-    skill_header: "tech_stack_&_tooling",
-    experience_header: "the_journey_so_far"
+    skill_header: "tools_&_tech",
+    experience_header: "where_i’ve_worked"
 }
 
 export const CONTACT_PAGE_META = {
-    title: "ping --me",
-    description: "Discuss software, career or personal finance or just say hello."
+    title: "get_in_touch",
+    description: "Talk software, freelance work, or career stuff. Or just say hello."
 }
 
 export const PROJECT_PAGE_META = {
-    title: "shipped_solutions",
-    description: "Business logic meets clean code - purpose-driven builds that scale."
+    title: "projects",
+    description: "Side projects, client work, and everything in between."
 }
 
 export const SITE_INFO = {

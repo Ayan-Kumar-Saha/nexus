@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PROJECT_LIST } from "@/constants/projects";
@@ -30,10 +29,15 @@ const ProjectDetails: FunctionComponent = () => {
     return (
         <div className="max-w-4xl mx-auto">
 
+            <Link to="/projects" className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-primary transition-colors mb-8">
+                <ArrowLeft size={13} />
+                back to projects
+            </Link>
+
             <div className="flex flex-col md:flex-row gap-8 mb-8">
                 {
                     project.imagePath && (
-                        <div className="w-full md:w-3/6 rounded-lg overflow-hidden border border-border">
+                        <div className="w-full md:w-3/6 rounded-sm overflow-hidden border border-border/40">
                             <img
                                 src={project.imagePath}
                                 alt={project.name}
@@ -44,19 +48,18 @@ const ProjectDetails: FunctionComponent = () => {
                 }
 
                 <div className="flex-1">
-                    <h1 className="text-3xl font-bold font-mono flex items-center gap-2 mb-4">
-                        <Code size={24} className="text-primary" />
+                    <p className="font-mono text-xs text-primary mb-2">// project</p>
+                    <h1 className="text-2xl font-bold font-mono mb-4">
                         {project.name}
                     </h1>
 
                     <p className="text-muted-foreground mb-6">{project.description}</p>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-6">
                         {project.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="bg-secondary/50 flex items-center gap-1">
-                                <Tag size={12} />
+                            <span key={tag} className="px-2 py-0.5 bg-secondary text-secondary-foreground rounded-sm text-xs font-mono border border-border/30">
                                 {tag}
-                            </Badge>
+                            </span>
                         ))}
                     </div>
 

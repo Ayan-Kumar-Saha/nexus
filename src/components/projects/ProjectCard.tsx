@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import { IProject } from "@/interfaces/project";
-import { Code, ExternalLink, Github } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
@@ -9,7 +8,8 @@ import { resolveSlug } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface IProjectCardProps {
-    project: IProject
+    project: IProject;
+    featured?: boolean;
 }
 
 const cardVariant = {
@@ -17,7 +17,7 @@ const cardVariant = {
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
 };
 
-const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
+const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project, featured = false }) => {
     const navigate = useNavigate();
 
     const { imagePath, name, description, tags, isCodeAvailable, isDemoAvailable, codebaseUrl, demoUrl } = project;
@@ -30,48 +30,89 @@ const ProjectCard: FunctionComponent<IProjectCardProps> = ({ project }) => {
         }
     }
 
-    const MotionCard = motion.create(Card);
+    const MotionDiv = motion.div;
+
+    if (featured) {
+        return (
+            <MotionDiv
+                variants={cardVariant}
+                onClick={handleCardClick}
+                className={`group overflow-hidden border border-border/40 rounded-sm hover:border-primary/30 transition-all duration-300 bg-card ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+                <div className="flex flex-col md:flex-row h-full">
+                    <div className="h-52 md:h-auto md:w-2/5 bg-muted overflow-hidden shrink-0">
+                        <img src={imagePath} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                        <div className="flex items-center gap-2 mb-1">
+                            <span className="font-mono text-xs text-primary px-1.5 py-0.5 border border-primary/20 bg-primary/5 rounded-sm">featured</span>
+                        </div>
+                        <h3 className="font-bold text-lg leading-tight mt-2 mb-2">{name}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4">{description}</p>
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                            {tags.map((tag) => (
+                                <span key={tag} className="text-xs px-2 py-0.5 font-mono bg-primary/8 text-primary rounded-sm border border-primary/15">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                        <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                            {isCodeAvailable && (
+                                <Button variant="ghost" size="sm" className="h-7 px-2 text-xs rounded-sm" asChild>
+                                    <a href={codebaseUrl} target="_blank" rel="noopener noreferrer">
+                                        <Github size={12} className="mr-1" /> Code
+                                    </a>
+                                </Button>
+                            )}
+                            {isDemoAvailable && (
+                                <Button size="sm" className="h-7 px-2 text-xs rounded-sm" asChild>
+                                    <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                                        <ExternalLink size={12} className="mr-1" /> Demo
+                                    </a>
+                                </Button>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </MotionDiv>
+        );
+    }
 
     return (
-        <MotionCard variants={cardVariant} onClick={handleCardClick} className={`overflow-hidden border border-border/50 transition-all hover:border-primary/20 hover:shadow-md ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
-            <div className="h-48 bg-muted overflow-hidden">
-                <img src={imagePath} alt={name} className="w-full h-full object-cover" />
+        <MotionDiv
+            variants={cardVariant}
+            onClick={handleCardClick}
+            className={`group overflow-hidden border border-border/40 rounded-sm hover:border-primary/30 transition-all duration-300 bg-card flex flex-col h-full ${project.isDetailsAvailable ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+            <div className="h-44 bg-muted overflow-hidden shrink-0">
+                <img src={imagePath} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <CardContent className="p-5">
-                <h3 className="flex items-center gap-2 text-lg font-bold mb-2">
-                    <Code size={20} className="text-primary" />
-                    <span>{name}</span>
-                </h3>
-                <p className="text-muted-foreground text-sm mb-3">{description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+            <div className="p-5 flex flex-col flex-grow">
+                <h3 className="font-bold text-base leading-tight mb-2">{name}</h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2 leading-relaxed flex-grow">{description}</p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
                     {tags.map((tag) => (
-                        <span key={tag} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                        <span key={tag} className="text-xs px-2 py-0.5 font-mono bg-primary/8 text-primary rounded-sm border border-primary/15">
                             {tag}
                         </span>
                     ))}
                 </div>
-                <div className="flex items-center gap-3">
-                    {
-                        isCodeAvailable && (
-                            <Button variant="outline" size="sm" asChild>
-                                <a href={codebaseUrl} target="_blank" rel="noopener noreferrer">
-                                    <Github size={16} className="mr-1" /> Code
-                                </a>
-                            </Button>
-                        )
-                    }
-                    {
-                        isDemoAvailable && (
-                            <Button size="sm" asChild>
-                                <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                                    <ExternalLink size={16} className="mr-1" /> Demo
-                                </a>
-                            </Button>
-                        )
-                    }
+                <div className="flex items-center gap-2 mt-auto" onClick={(e) => e.stopPropagation()}>
+                    {isCodeAvailable && (
+                        <Button variant="ghost" size="sm" className="h-7 px-2 text-xs rounded-sm" asChild>
+                            <a href={codebaseUrl} target="_blank" rel="noopener noreferrer">
+                                <Github size={12} className="mr-1" /> Code
+                            </a>
+                        </Button>
+                    )}
+                    {isDemoAvailable && (
+                        <Button size="sm" className="h-7 px-2 text-xs rounded-sm" asChild>
+                            <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink size={12} className="mr-1" /> Demo
+                            </a>
+                        </Button>
+                    )}
                 </div>
-            </CardContent>
-        </MotionCard>
+            </div>
+        </MotionDiv>
     );
 }
 

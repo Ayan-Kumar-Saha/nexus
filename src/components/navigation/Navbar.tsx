@@ -15,16 +15,17 @@ const Navbar: FunctionComponent = () => {
     };
 
     return (
-        <header className="sticky top-0 backdrop-blur-lg bg-background/90 border-b border-border z-50">
-            <div className="container-custom py-3">
+        <header className="sticky top-0 z-50 border-b border-border/40 bg-background/85 backdrop-blur-xl">
+            <div className="container-custom py-4">
                 <nav className="flex items-center justify-between">
-                    <Link to="/" className="font-mono text-lg md:text-xl font-bold hover:text-primary transition-colors">
-                        <span className="text-primary">&gt;</span> ayan<span className="text-primary">_</span>kumar<span className="text-primary">_</span>saha
+                    <Link to="/" className="font-mono text-sm font-bold group">
+                        <span className="text-primary">~/</span>
+                        <span className="text-foreground group-hover:text-primary transition-colors">ayan</span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-6">
-                        <ul className="flex items-center space-x-6">
+                    <div className="hidden md:flex items-center gap-8">
+                        <ul className="flex items-center gap-6">
                             {
                                 NAV_LINKS
                                     .filter((link: INavLink) => link.isActive && link.showInNav)
@@ -32,14 +33,19 @@ const Navbar: FunctionComponent = () => {
                                         <li key={link.name}>
                                             <Link
                                                 to={link.path}
-                                                className={`hover:text-primary transition-colors relative ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'
-                                                    }`}
+                                                className={`font-mono text-sm transition-colors relative pb-1 ${
+                                                    location.pathname === link.path
+                                                        ? 'text-primary'
+                                                        : 'text-muted-foreground hover:text-foreground'
+                                                }`}
                                             >
                                                 {link.name}
                                                 {location.pathname === link.path && (
-                                                    <motion.span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary rounded-full"
+                                                    <motion.span
+                                                        className="absolute left-0 right-0 -bottom-0.5 h-px bg-primary"
                                                         layoutId="navbar-indicator"
-                                                        transition={{ duration: 0.3 }} />
+                                                        transition={{ duration: 0.25 }}
+                                                    />
                                                 )}
                                             </Link>
                                         </li>
@@ -48,8 +54,8 @@ const Navbar: FunctionComponent = () => {
                             <li>
                                 <Link
                                     to="https://topmate.io/ayan_kumar_saha"
-                                    className={`hover:text-primary transition-colors relative text-foreground`}>
-                                    Book 1:1
+                                    className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                    book 1:1
                                 </Link>
                             </li>
                         </ul>
@@ -57,22 +63,22 @@ const Navbar: FunctionComponent = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center space-x-3">
+                    <div className="md:hidden flex items-center gap-3">
                         <ThemeToggle />
                         <button
-                            className="text-foreground hover:text-primary p-1"
+                            className="text-muted-foreground hover:text-foreground p-1 transition-colors"
                             onClick={toggleMenu}
                             aria-label="Toggle Menu"
                         >
-                            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
                         </button>
                     </div>
                 </nav>
 
                 {
                     isMenuOpen && (
-                        <div className="md:hidden py-3">
-                            <ul className="flex flex-col space-y-2">
+                        <div className="md:hidden py-4 border-t border-border/40 mt-3">
+                            <ul className="flex flex-col gap-1">
                                 {
                                     NAV_LINKS
                                         .filter((link: INavLink) => link.isActive && link.showInNav)
@@ -80,27 +86,30 @@ const Navbar: FunctionComponent = () => {
                                             <Link
                                                 key={link.name}
                                                 to={link.path}
-                                                className={`block py-2 hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary font-medium' : 'text-foreground'
-                                                    }`}
+                                                className={`block py-2 font-mono text-sm transition-colors ${
+                                                    location.pathname === link.path
+                                                        ? 'text-primary'
+                                                        : 'text-muted-foreground hover:text-foreground'
+                                                }`}
                                                 onClick={() => setIsMenuOpen(false)}
                                             >
                                                 {link.name}
                                             </Link>
                                         ))
                                 }
-                                <li>
-                                    <Link
-                                        to="https://topmate.io/ayan_kumar_saha"
-                                        className={`block py-2 hover:text-primary transition-colors relative text-foreground`}>
-                                        Book 1:1
-                                    </Link>
-                                </li>
+                                <Link
+                                    to="https://topmate.io/ayan_kumar_saha"
+                                    className="block py-2 font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    book 1:1
+                                </Link>
                             </ul>
                         </div>
                     )
                 }
-            </div >
-        </header >
+            </div>
+        </header>
     )
 }
 

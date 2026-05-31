@@ -7,12 +7,17 @@ type ISectionHeaderProps = {
 
 const SectionHeader: FunctionComponent<ISectionHeaderProps> = ({ title, description = '' }) => {
     return (
-        <>
-            <h2 className="font-mono relative overflow-hidden whitespace-nowrap border-r-4 pr-1 mb-2">
-                <span className="text-primary">&gt;</span> {title}
-            </h2>
-            {description && <p className="text-muted-foreground mb-8">{description}</p>}
-        </>
+        <div className="mb-10">
+            <p className="font-mono text-xs text-primary mb-2">
+                <span className="opacity-60">// </span>{title}
+            </p>
+            {description && (
+                <p className="text-foreground text-lg md:text-xl font-medium max-w-2xl leading-snug">
+                    {description}
+                </p>
+            )}
+            <div className="mt-4 h-px bg-border" />
+        </div>
     )
 }
 

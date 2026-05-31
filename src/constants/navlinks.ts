@@ -11,7 +11,7 @@ const ContactPage = lazy(() => import('../pages/Contact'));
 export const NAV_LINKS: INavLink[] = [
     {
         id: 1,
-        name: 'Home',
+        name: 'home',
         path: '/',
         element: HomePage,
         isActive: true,
@@ -19,7 +19,7 @@ export const NAV_LINKS: INavLink[] = [
     },
     {
         id: 2,
-        name: 'About',
+        name: 'about',
         path: '/about-me',
         element: AboutMePage,
         isActive: true,
@@ -27,7 +27,7 @@ export const NAV_LINKS: INavLink[] = [
     },
     {
         id: 3,
-        name: 'Projects',
+        name: 'projects',
         path: '/projects',
         element: ProjectsPage,
         isActive: true,
@@ -35,7 +35,7 @@ export const NAV_LINKS: INavLink[] = [
     },
     {
         id: 3,
-        name: 'Projects',
+        name: 'projects',
         path: '/projects/:slug',
         element: ProjectDetailsPage,
         isActive: true,
@@ -43,7 +43,7 @@ export const NAV_LINKS: INavLink[] = [
     },
     {
         id: 4,
-        name: 'Blogs',
+        name: 'blogs',
         path: '/blogs',
         element: BlogsPage,
         isActive: false,
@@ -51,7 +51,7 @@ export const NAV_LINKS: INavLink[] = [
     },
     {
         id: 5,
-        name: 'Contact',
+        name: 'contact',
         path: '/contact',
         element: ContactPage,
         isActive: true,

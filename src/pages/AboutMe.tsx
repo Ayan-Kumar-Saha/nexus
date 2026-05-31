@@ -16,7 +16,7 @@ const containerVariants = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2
+            staggerChildren: 0.1
         }
     }
 };
@@ -27,7 +27,7 @@ const itemVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 0.4
+            duration: 0.35
         }
     }
 };
@@ -36,44 +36,45 @@ const AboutMe = () => {
     return (
         <>
             <SectionHeader title={ABOUT_PAGE_META.title} description={ABOUT_PAGE_META.description} />
+
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col-reverse md:flex-row gap-6">
-                <div className="flex-1/2">
-                    <div className="my-3 text-sm md:text-base">
-                        <p className="text-justify">
-                            Hey, I’m Ayan Kumar Saha, a full-stack engineer who’s all about building things that work and feel right. Clean code, clear intent, and a good user experience - that’s my happy place.
+                transition={{ duration: 0.45 }}
+                className="flex flex-col-reverse md:flex-row gap-8 mt-2">
+                <div className="flex-1">
+                    <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                        <p>
+                            Hey, I'm Ayan. I build software for a living and I genuinely like it. Six years in and I still get a kick out of shipping something that works.
                         </p>
-                        <p className="mt-3 text-justify">
-                            I’ve been doing this for over six years now. From small websites to enterprise-level systems, I’ve worn a lot of hats. But it’s never been just about ticking boxes. I care about the craft. I enjoy solving problems that matter and making digital spaces better.
+                        <p>
+                            I've worked across the stack. Frontends, backends, mobile apps, wearables, DevOps, cloud infra. The problems kept pulling me in different directions and I followed.
                         </p>
-                        <p className="mt-3 text-justify">
-                            Outside of work, I’m a finance enthusiast, an unapologetic cricket addict, and someone who genuinely enjoys the occasional escape to the bed, for good sleep.
+                        <p>
+                            Outside work, I'm into personal finance, read about money more than most people I know, and follow cricket closely. I also like reading about how businesses work, what makes products stick, and occasionally go down rabbit holes I didn't plan on.
                         </p>
-                        <p className="mt-3 text-justify">
-                            I’m currently based in {CONTACT_METHODS.find(method => method.name === 'Location')?.value} - open to remote roles and freelance gigs that are worth the time and energy. If you’ve got something interesting, let’s chat.
+                        <p>
+                            Based in {CONTACT_METHODS.find(method => method.name === 'Location')?.value}. Open to remote work and freelance projects, especially ones that involve something I haven't done before.
                         </p>
                     </div>
-                    <div className="flex mt-10 gap-3">
-                        <Button asChild>
+                    <div className="flex mt-8 gap-3">
+                        <Button className="rounded-sm" asChild>
                             <Link to="/contact">
-                                <Coffee className="mr-2" size={16} />
+                                <Coffee className="mr-2" size={15} />
                                 Get in Touch
                             </Link>
                         </Button>
-                        <Button variant="outline" asChild>
+                        <Button variant="outline" className="rounded-sm" asChild>
                             <a href="docs/resume_ayan_kumar_saha.pdf" download>
-                                <Download className="mr-2" size={16} />
+                                <Download className="mr-2" size={15} />
                                 Download CV
                             </a>
                         </Button>
                     </div>
                 </div>
-                <div className="flex-1/2 flex justify-center items-center">
-                    <div className="border-4 border-primary w-[200px] h-[200px] md:w-[230px] md:h-[230px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden">
-                        <img src='images/dp2.png' className="w-full h-full object-cover" />
+                <div className="flex justify-center md:justify-end items-start">
+                    <div className="border-2 border-primary/30 w-[180px] h-[180px] md:w-[210px] md:h-[210px] rounded-full overflow-hidden">
+                        <img src='images/dp2.png' className="w-full h-full object-cover" alt="Ayan Kumar Saha" />
                     </div>
                 </div>
             </motion.div>
@@ -84,12 +85,11 @@ const AboutMe = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {
-
                         SKILL_CATEGORIES.map(
                             (category: ISkillCategory) => (
-                                <motion.div key={category.category} variants={itemVariants}>
+                                <motion.div key={category.category} variants={itemVariants} className="h-full">
                                     <SkillCategoryCard category={category} />
                                 </motion.div>
                             ))
@@ -99,10 +99,10 @@ const AboutMe = () => {
 
             <section className="mt-16">
                 <SectionHeader title={ABOUT_PAGE_META.experience_header} />
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {
-                        EXPERIENCES.map((company) => <ExperienceCard key={company.id} experience={company} />)
-                    }
+                <div className="relative ml-1.5 pl-6 border-l border-border/30 space-y-8">
+                    {EXPERIENCES.map((company) => (
+                        <ExperienceCard key={company.id} experience={company} />
+                    ))}
                 </div>
             </section>
         </>

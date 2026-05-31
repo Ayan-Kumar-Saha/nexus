@@ -59,26 +59,28 @@ const Contact: FunctionComponent = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
 
                 <div className="lg:col-span-1 space-y-6">
-                    <h3 className="text-xl font-bold">Get in Touch</h3>
+                    <p className="font-mono text-xs text-primary">// contact_info</p>
 
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                         {
                             CONTACT_METHODS.map(method => <ContactCard key={method.id} method={method} />)
                         }
                     </div>
 
-                    <div className="mt-8">
-                        <h3 className="text-xl font-bold mb-4">Connect</h3>
-                        <div className="flex space-x-4">
+                    <div className="mt-6">
+                        <p className="font-mono text-xs text-primary mb-3">// connect</p>
+                        <div className="flex gap-2 flex-wrap">
                             {
-                                SOCIAL_LINKS.map(method => <SocialCard key={method.id} method={method} />)
+                                SOCIAL_LINKS
+                                    .filter(l => l.isActive)
+                                    .map(method => <SocialCard key={method.id} method={method} />)
                             }
                         </div>
                     </div>
                 </div>
 
                 <div className="lg:col-span-2">
-                    <h3 className="text-xl font-bold mb-6">Send a Message</h3>
+                    <p className="font-mono text-xs text-primary mb-6">// send_message</p>
                     <form className="space-y-6" onSubmit={handleSubmit(onFormSubmit, onError)}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-2">
@@ -88,6 +90,7 @@ const Contact: FunctionComponent = () => {
                                 <Input
                                     id="name"
                                     placeholder="Your name"
+                                    className="rounded-sm"
                                     {...register('name', { required: 'Name is required' })}
                                 />
                             </div>
@@ -98,6 +101,7 @@ const Contact: FunctionComponent = () => {
                                 <Input
                                     id="email"
                                     placeholder="Your email"
+                                    className="rounded-sm"
                                     {...register('email', { required: true })}
                                 />
                             </div>
@@ -109,6 +113,7 @@ const Contact: FunctionComponent = () => {
                             <Input
                                 id="subject"
                                 placeholder="Subject of your message"
+                                className="rounded-sm"
                                 {...register('subject', { required: true })}
                             />
                         </div>
@@ -120,6 +125,7 @@ const Contact: FunctionComponent = () => {
                                 id="message"
                                 placeholder="Your message..."
                                 rows={6}
+                                className="rounded-sm"
                                 {...register('message', { required: true })}
                             />
                         </div>
